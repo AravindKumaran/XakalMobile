@@ -40,7 +40,7 @@ const Assessments = () => {
   };
 
   return (
-    <View>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,8 +55,53 @@ const Assessments = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <Text>Assessments</Text>
-    </View>
+      <View style={styles.container1}>
+        <TouchableOpacity
+          style={styles.box}
+          onPress={() => {
+            navigation.navigate('Internals');
+          }}>
+          <Text style={styles.text1}>Internals</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.box}
+          onPress={() => {
+            navigation.navigate('SemesterMarks');
+          }}>
+          <Text style={styles.text1}>Semester Marks</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  },
+  container1: {
+    margin: 25,
+  },
+  box: {
+    borderColor: '#FFFFFF',
+    borderWidth: 1,
+    marginBottom: 30,
+    borderRadius: 20,
+    height: 100,
+    width: '80%',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    elevation: 10,
+  },
+  text1: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 18,
+    color: '#47687F',
+    alignSelf: 'center',
+  },
+});
+
 export default Assessments;

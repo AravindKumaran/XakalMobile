@@ -94,14 +94,21 @@ const Whiteboard = () => {
                 />
                 <TouchableOpacity
                   style={{
-                    height: 40,
-                    width: 150,
-                    backgroundColor: 'blue',
+                    height: 50,
+                    width: 200,
+                    backgroundColor: '#FFFFFF',
                     justifyContent: 'center',
-                    borderRadius: 10,
-                    marginVertical: 10,
+                    borderRadius: 50,
+                    marginVertical: 20,
+                    alignSelf: 'center',
+                    elevation: 10,
                   }}>
-                  <Text style={{color: 'white', alignSelf: 'center'}}>
+                  <Text
+                    style={{
+                      color: '#47687F',
+                      alignSelf: 'center',
+                      fontWeight: '700',
+                    }}>
                     POST
                   </Text>
                 </TouchableOpacity>

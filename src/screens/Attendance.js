@@ -23,7 +23,7 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const Payment = () => {
+const Attendance = () => {
   const navigation = useNavigation();
 
   const MyCustomLeftComponent = () => {
@@ -58,7 +58,7 @@ const Payment = () => {
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
         centerComponent={{
-          text: 'Payment',
+          text: 'Attendance',
           style: {color: '#476880', fontSize: 20, fontWeight: '700', top: 5},
         }}
         containerStyle={{
@@ -97,53 +97,43 @@ const Payment = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+          <View style={styles.box1}>
+            <View style={styles.box}>
+              <Text style={styles.text3}>STUDENT ID</Text>
+              <Text style={styles.text4}>13IT205</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>DATE OF ABSENCE</Text>
+              <Text style={styles.text4}>10/30/2020 - 10/31/2020</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>REASON</Text>
+              <Text style={styles.text4}>Vacation leave</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>TYPE</Text>
+              <Text style={styles.text4}>Leave</Text>
+            </View>
           </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+          <View style={styles.box1}>
+            <View style={styles.box}>
+              <Text style={styles.text3}>STUDENT ID</Text>
+              <Text style={styles.text4}>13IT205</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>DATE OF ABSENCE</Text>
+              <Text style={styles.text4}>11/18/2020 - 11/18/2020</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>REASON</Text>
+              <Text style={styles.text4}>Fancy leave</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>TYPE</Text>
+              <Text style={styles.text4}>OD</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -160,16 +150,18 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    height: 50,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 125,
-    width: '95%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    padding: 0,
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    height: 230,
+    borderRadius: 30,
+    marginVertical: 15,
+    flexDirection: 'column',
     elevation: 10,
     backgroundColor: '#FFFFFF',
-    marginVertical: 15,
   },
   text: {
     marginHorizontal: 15,
@@ -238,4 +230,4 @@ const customPickerStyles = StyleSheet.create({
   },
 });
 
-export default Payment;
+export default Attendance;

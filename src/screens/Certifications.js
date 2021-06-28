@@ -6,33 +6,33 @@ const Certifications = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View style={styles.box1}>
-          <Text style={[styles.text3, {fontSize: 20}]}>Hackathon</Text>
-          <Text style={[styles.text3, {fontSize: 18, textAlign: 'center'}]}>
+          <Text style={[styles.text3, {fontSize: 18}]}>Hackathon</Text>
+          <Text style={[styles.text3, {fontSize: 16, textAlign: 'center'}]}>
             This is appreciation certificate for Hackathon contest
           </Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.text3}>Date: 10-05-2020</Text>
-            <Text style={styles.text3}></Text>
+            <Text style={[styles.text3, {fontSize: 14}]}>Date: 10-05-2020</Text>
+            <Text style={[styles.text3, {fontSize: 14}]}></Text>
           </View>
         </View>
         <View style={styles.box1}>
-          <Text style={[styles.text3, {fontSize: 20}]}>Learnathon</Text>
-          <Text style={[styles.text3, {fontSize: 18, textAlign: 'center'}]}>
+          <Text style={[styles.text3, {fontSize: 18}]}>Learnathon</Text>
+          <Text style={[styles.text3, {fontSize: 16, textAlign: 'center'}]}>
             This is appreciation certificate for Learnathon contest
           </Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.text3}>Date: 10-05-2020</Text>
-            <Text style={styles.text3}></Text>
+            <Text style={[styles.text3, {fontSize: 14}]}>Date: 10-05-2020</Text>
+            <Text style={[styles.text3, {fontSize: 14}]}></Text>
           </View>
         </View>
         <View style={styles.box1}>
-          <Text style={[styles.text3, {fontSize: 20}]}>Trylathon</Text>
-          <Text style={[styles.text3, {fontSize: 18, textAlign: 'center'}]}>
+          <Text style={[styles.text3, {fontSize: 18}]}>Trylathon</Text>
+          <Text style={[styles.text3, {fontSize: 16, textAlign: 'center'}]}>
             This is appreciation certificate for Trylathon contest
           </Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.text3}>Date: 10-05-2020</Text>
-            <Text style={styles.text3}></Text>
+            <Text style={[styles.text3, {fontSize: 14}]}>Date: 10-05-2020</Text>
+            <Text style={[styles.text3, {fontSize: 14}]}></Text>
           </View>
         </View>
       </View>

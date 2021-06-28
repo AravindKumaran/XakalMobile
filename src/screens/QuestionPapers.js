@@ -64,18 +64,14 @@ const QuestionPapers = () => {
               />
             )}
           />
-          <TouchableOpacity
-            style={{
-              height: 40,
-              width: 150,
-              backgroundColor: 'blue',
-              justifyContent: 'center',
-              borderRadius: 10,
-              marginVertical: 20,
-              alignSelf: 'center',
-            }}>
-            <Text style={{color: 'white', alignSelf: 'center'}}>
-              GET RESULTS
+          <TouchableOpacity style={styles.touch}>
+            <Text
+              style={{
+                color: '#47687F',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Get Results!
             </Text>
           </TouchableOpacity>
         </View>
@@ -179,6 +175,16 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     fontSize: 14,
     color: '#47687F',
+  },
+  touch: {
+    height: 50,
+    width: 200,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    borderRadius: 50,
+    marginVertical: 20,
+    alignSelf: 'center',
+    elevation: 10,
   },
 });
 

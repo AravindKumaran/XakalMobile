@@ -3,12 +3,13 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Feather from 'react-native-vector-icons/Feather';
 import Whiteboard from '../screens/Whiteboard';
 import Assessments from '../screens/Assessments';
-import Attendence from '../screens/Attendence';
+import Attendance from '../screens/Attendance';
 import Payment from '../screens/Payment';
 import Profile from '../screens/Profile';
 import DrawerContent from './DrawerContent';
 import DashboardNavigator from './DashboardNavigator';
 import NotesNavigator from './NotesNavigator';
+import AssessmentsNavigator from './AssessmentsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -76,7 +77,7 @@ const DrawerNavigator = () => (
     />
     <Drawer.Screen
       name="Assessments"
-      component={Assessments}
+      component={AssessmentsNavigator}
       options={{
         drawerIcon: ({color, size}) => (
           <Feather name="book" size={size} color={color} />
@@ -86,8 +87,8 @@ const DrawerNavigator = () => (
       }}
     />
     <Drawer.Screen
-      name="Attendence"
-      component={Attendence}
+      name="Attendance"
+      component={Attendance}
       options={{
         drawerIcon: ({color, size}) => (
           <Feather name="database" size={size} color={color} />

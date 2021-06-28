@@ -10,7 +10,6 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
-import {Header} from 'react-native-elements';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -23,51 +22,11 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const Payment = () => {
+const SemesterMarks = () => {
   const navigation = useNavigation();
-
-  const MyCustomLeftComponent = () => {
-    return (
-      <TouchableOpacity onPress={() => navigation.openDrawer()}>
-        <Feather
-          name="menu"
-          size={25}
-          color="#47687F"
-          style={{paddingLeft: 10, top: 5}}
-        />
-      </TouchableOpacity>
-    );
-  };
-
-  const MyCustomRightComponent = () => {
-    return (
-      <TouchableOpacity>
-        <Feather
-          name="message-circle"
-          color="#FFFFFF"
-          size={25}
-          style={{height: 35, padding: 5}}
-        />
-      </TouchableOpacity>
-    );
-  };
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <Header
-        leftComponent={<MyCustomLeftComponent />}
-        rightComponent={<MyCustomRightComponent />}
-        centerComponent={{
-          text: 'Payment',
-          style: {color: '#476880', fontSize: 20, fontWeight: '700', top: 5},
-        }}
-        containerStyle={{
-          backgroundColor: '#FFFFFF',
-          elevation: 5,
-          borderBottomStartRadius: 15,
-          borderBottomEndRadius: 15,
-        }}
-      />
       <View style={styles.container1}>
         <View>
           <RNPickerSelect
@@ -97,53 +56,29 @@ const Payment = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+          <View style={styles.box1}>
+            <Text style={[styles.text3, {fontSize: 18}]}>Physics 1</Text>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>GRADE</Text>
+              <Text style={styles.text4}>B</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={styles.box}>
+              <Text style={styles.text3}>RESULT</Text>
+              <Text style={styles.text4}>PASS</Text>
+            </View>
           </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+          <View style={styles.box1}>
+            <Text style={[styles.text3, {fontSize: 18}]}>Chemistry 1</Text>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>GRADE</Text>
+              <Text style={styles.text4}>B</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={styles.box}>
+              <Text style={styles.text3}>RESULT</Text>
+              <Text style={styles.text4}>PASS</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -160,16 +95,18 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    height: 50,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 125,
-    width: '95%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    padding: 0,
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    height: 180,
+    borderRadius: 30,
+    marginVertical: 15,
+    flexDirection: 'column',
     elevation: 10,
     backgroundColor: '#FFFFFF',
-    marginVertical: 15,
   },
   text: {
     marginHorizontal: 15,
@@ -238,4 +175,4 @@ const customPickerStyles = StyleSheet.create({
   },
 });
 
-export default Payment;
+export default SemesterMarks;

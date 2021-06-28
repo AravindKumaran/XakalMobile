@@ -40,7 +40,7 @@ const Profile = () => {
   };
 
   return (
-    <View>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,8 +55,133 @@ const Profile = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <Text>Profile</Text>
-    </View>
+      <View style={styles.container1}>
+        <View style={styles.box1}>
+          <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
+          <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+          <View style={styles.box}>
+            <Text style={styles.text3}>Name</Text>
+            <Text style={styles.text4}>Witcher</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Course</Text>
+            <Text style={styles.text4}>B.E</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Branch</Text>
+            <Text style={styles.text4}>CSE</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Blood group</Text>
+            <Text style={styles.text4}>O+</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Contact number</Text>
+            <Text style={styles.text4}>1234567890</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Emergency contact number</Text>
+            <Text style={styles.text4}>1234567890</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Email ID</Text>
+            <Text style={styles.text4}>witcher@gmail.com</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Parents name</Text>
+            <Text style={styles.text4}>Zeus</Text>
+          </View>
+        </View>
+        <View style={[styles.box1, {height: 330}]}>
+          <Text style={[styles.text3, {fontSize: 18}]}>
+            Educational Details
+          </Text>
+          <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+          <View style={styles.box}>
+            <Text style={styles.text3}>Student ID</Text>
+            <Text style={styles.text4}>13IT205</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>CGPA</Text>
+            <Text style={styles.text4}>8.3</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Certifications Won</Text>
+            <Text style={styles.text4}>3</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Awards Won</Text>
+            <Text style={styles.text4}>4</Text>
+          </View>
+          <View style={styles.box}>
+            <Text style={styles.text3}>Leaves Taken</Text>
+            <Text style={styles.text4}>4</Text>
+          </View>
+        </View>
+        <TouchableOpacity style={styles.touch}>
+          <Text
+            style={{color: '#47687F', alignSelf: 'center', fontWeight: '700'}}>
+            Edit Personal Details
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  },
+  container1: {
+    margin: 25,
+  },
+  box: {
+    height: 50,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    height: 480,
+    borderRadius: 30,
+    marginVertical: 15,
+    flexDirection: 'column',
+    elevation: 10,
+    backgroundColor: '#FFFFFF',
+  },
+  text1: {
+    fontSize: 18,
+    fontWeight: '700',
+    alignSelf: 'center',
+  },
+  text3: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#47687F',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text4: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '400',
+    fontSize: 14,
+    color: '#47687F',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  touch: {
+    height: 50,
+    width: 200,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    borderRadius: 50,
+    marginVertical: 20,
+    alignSelf: 'center',
+    elevation: 10,
+  },
+});
+
 export default Profile;
