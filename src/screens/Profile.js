@@ -40,7 +40,7 @@ const Profile = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,77 +55,83 @@ const Profile = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <View style={styles.box1}>
-          <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
-          <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-          <View style={styles.box}>
-            <Text style={styles.text3}>Name</Text>
-            <Text style={styles.text4}>Witcher</Text>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <View style={styles.box1}>
+            <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>Name</Text>
+              <Text style={styles.text4}>Witcher</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Course</Text>
+              <Text style={styles.text4}>B.E</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Branch</Text>
+              <Text style={styles.text4}>CSE</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Blood group</Text>
+              <Text style={styles.text4}>O+</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Contact number</Text>
+              <Text style={styles.text4}>1234567890</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Emergency contact number</Text>
+              <Text style={styles.text4}>1234567890</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Email ID</Text>
+              <Text style={styles.text4}>witcher@gmail.com</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Parents name</Text>
+              <Text style={styles.text4}>Zeus</Text>
+            </View>
           </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Course</Text>
-            <Text style={styles.text4}>B.E</Text>
+          <View style={[styles.box1, {height: 330}]}>
+            <Text style={[styles.text3, {fontSize: 18}]}>
+              Educational Details
+            </Text>
+            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={styles.box}>
+              <Text style={styles.text3}>Student ID</Text>
+              <Text style={styles.text4}>13IT205</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>CGPA</Text>
+              <Text style={styles.text4}>8.3</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Certifications Won</Text>
+              <Text style={styles.text4}>3</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Awards Won</Text>
+              <Text style={styles.text4}>4</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Leaves Taken</Text>
+              <Text style={styles.text4}>4</Text>
+            </View>
           </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Branch</Text>
-            <Text style={styles.text4}>CSE</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Blood group</Text>
-            <Text style={styles.text4}>O+</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Contact number</Text>
-            <Text style={styles.text4}>1234567890</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Emergency contact number</Text>
-            <Text style={styles.text4}>1234567890</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Email ID</Text>
-            <Text style={styles.text4}>witcher@gmail.com</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Parents name</Text>
-            <Text style={styles.text4}>Zeus</Text>
-          </View>
+          <TouchableOpacity style={styles.touch}>
+            <Text
+              style={{
+                color: '#47687F',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Edit Personal Details
+            </Text>
+          </TouchableOpacity>
         </View>
-        <View style={[styles.box1, {height: 330}]}>
-          <Text style={[styles.text3, {fontSize: 18}]}>
-            Educational Details
-          </Text>
-          <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-          <View style={styles.box}>
-            <Text style={styles.text3}>Student ID</Text>
-            <Text style={styles.text4}>13IT205</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>CGPA</Text>
-            <Text style={styles.text4}>8.3</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Certifications Won</Text>
-            <Text style={styles.text4}>3</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Awards Won</Text>
-            <Text style={styles.text4}>4</Text>
-          </View>
-          <View style={styles.box}>
-            <Text style={styles.text3}>Leaves Taken</Text>
-            <Text style={styles.text4}>4</Text>
-          </View>
-        </View>
-        <TouchableOpacity style={styles.touch}>
-          <Text
-            style={{color: '#47687F', alignSelf: 'center', fontWeight: '700'}}>
-            Edit Personal Details
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 

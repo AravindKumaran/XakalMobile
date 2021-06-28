@@ -53,7 +53,7 @@ const Attendance = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -68,76 +68,78 @@ const Attendance = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
-          <TouchableOpacity style={styles.touch}>
-            <Text
-              style={{
-                color: '#47687F',
-                alignSelf: 'center',
-                fontWeight: '700',
-              }}>
-              Get Results!
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <View style={styles.box1}>
-            <View style={styles.box}>
-              <Text style={styles.text3}>STUDENT ID</Text>
-              <Text style={styles.text4}>13IT205</Text>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <View>
+            <RNPickerSelect
+              useNativeAndroidPickerStyle={false}
+              onValueChange={value => console.log(value)}
+              items={semester_list}
+              placeholder={{label: 'Select Semester', value: null}}
+              style={customPickerStyles}
+              Icon={() => (
+                <Feather
+                  name="chevron-down"
+                  size={25}
+                  color="#47687F"
+                  style={{top: 12.5, right: 50}}
+                />
+              )}
+            />
+            <TouchableOpacity style={styles.touch}>
+              <Text
+                style={{
+                  color: '#47687F',
+                  alignSelf: 'center',
+                  fontWeight: '700',
+                }}>
+                Get Results!
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <View style={styles.box1}>
+              <View style={styles.box}>
+                <Text style={styles.text3}>STUDENT ID</Text>
+                <Text style={styles.text4}>13IT205</Text>
+              </View>
+              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>DATE OF ABSENCE</Text>
+                <Text style={styles.text4}>10/30/2020 - 10/31/2020</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>REASON</Text>
+                <Text style={styles.text4}>Vacation leave</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>TYPE</Text>
+                <Text style={styles.text4}>Leave</Text>
+              </View>
             </View>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>DATE OF ABSENCE</Text>
-              <Text style={styles.text4}>10/30/2020 - 10/31/2020</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>REASON</Text>
-              <Text style={styles.text4}>Vacation leave</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>TYPE</Text>
-              <Text style={styles.text4}>Leave</Text>
+            <View style={styles.box1}>
+              <View style={styles.box}>
+                <Text style={styles.text3}>STUDENT ID</Text>
+                <Text style={styles.text4}>13IT205</Text>
+              </View>
+              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>DATE OF ABSENCE</Text>
+                <Text style={styles.text4}>11/18/2020 - 11/18/2020</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>REASON</Text>
+                <Text style={styles.text4}>Fancy leave</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>TYPE</Text>
+                <Text style={styles.text4}>OD</Text>
+              </View>
             </View>
           </View>
-          <View style={styles.box1}>
-            <View style={styles.box}>
-              <Text style={styles.text3}>STUDENT ID</Text>
-              <Text style={styles.text4}>13IT205</Text>
-            </View>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>DATE OF ABSENCE</Text>
-              <Text style={styles.text4}>11/18/2020 - 11/18/2020</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>REASON</Text>
-              <Text style={styles.text4}>Fancy leave</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>TYPE</Text>
-              <Text style={styles.text4}>OD</Text>
-            </View>
-          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 

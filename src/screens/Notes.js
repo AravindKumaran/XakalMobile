@@ -40,7 +40,7 @@ const Notes = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,30 +55,32 @@ const Notes = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('ClassNotes');
-          }}>
-          <Text style={styles.text1}>Class Notes</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('XakalNotes');
-          }}>
-          <Text style={styles.text1}>XAKAL Notes</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('QuestionPapers');
-          }}>
-          <Text style={styles.text1}>Question Papers</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('ClassNotes');
+            }}>
+            <Text style={styles.text1}>Class Notes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('XakalNotes');
+            }}>
+            <Text style={styles.text1}>XAKAL Notes</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('QuestionPapers');
+            }}>
+            <Text style={styles.text1}>Question Papers</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </>
   );
 };
 

@@ -53,7 +53,7 @@ const Payment = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -68,86 +68,88 @@ const Payment = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
-          <TouchableOpacity style={styles.touch}>
-            <Text
-              style={{
-                color: '#47687F',
-                alignSelf: 'center',
-                fontWeight: '700',
-              }}>
-              Get Results!
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <View>
+            <RNPickerSelect
+              useNativeAndroidPickerStyle={false}
+              onValueChange={value => console.log(value)}
+              items={semester_list}
+              placeholder={{label: 'Select Semester', value: null}}
+              style={customPickerStyles}
+              Icon={() => (
+                <Feather
+                  name="chevron-down"
+                  size={25}
+                  color="#47687F"
+                  style={{top: 12.5, right: 50}}
+                />
+              )}
+            />
+            <TouchableOpacity style={styles.touch}>
+              <Text
+                style={{
+                  color: '#47687F',
+                  alignSelf: 'center',
+                  fontWeight: '700',
+                }}>
+                Get Results!
               </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
             </TouchableOpacity>
           </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Paid</Text>
-              </Text>
+          <View>
+            <View style={styles.box}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                }}>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
+                  <Text style={styles.text2}>Paid</Text>
+                </Text>
 
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
+                  <Text style={styles.text2}>05/05/2019</Text>
+                </Text>
+              </View>
+              <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
+                <Feather
+                  name={'arrow-down-circle'}
+                  size={25}
+                  color={'#47687F'}
+                  style={{marginHorizontal: 15}}
+                />
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={styles.box}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                }}>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
+                  <Text style={styles.text2}>Paid</Text>
+                </Text>
+
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
+                  <Text style={styles.text2}>05/05/2019</Text>
+                </Text>
+              </View>
+              <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
+                <Feather
+                  name={'arrow-down-circle'}
+                  size={25}
+                  color={'#47687F'}
+                  style={{marginHorizontal: 15}}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 

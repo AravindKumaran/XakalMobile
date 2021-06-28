@@ -40,7 +40,7 @@ const Assessments = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,23 +55,25 @@ const Assessments = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('Internals');
-          }}>
-          <Text style={styles.text1}>Internals</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('SemesterMarks');
-          }}>
-          <Text style={styles.text1}>Semester Marks</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Internals');
+            }}>
+            <Text style={styles.text1}>Internals</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('SemesterMarks');
+            }}>
+            <Text style={styles.text1}>Semester Marks</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </>
   );
 };
 

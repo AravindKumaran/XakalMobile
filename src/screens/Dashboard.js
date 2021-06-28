@@ -40,7 +40,7 @@ const Dashboard = () => {
   };
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <>
       <Header
         leftComponent={<MyCustomLeftComponent />}
         rightComponent={<MyCustomRightComponent />}
@@ -55,30 +55,32 @@ const Dashboard = () => {
           borderBottomEndRadius: 15,
         }}
       />
-      <View style={styles.container1}>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('Academic');
-          }}>
-          <Text style={styles.text1}>Academic Performance</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('Certifications');
-          }}>
-          <Text style={styles.text1}>Other Certifications</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.box}
-          onPress={() => {
-            navigation.navigate('Awards');
-          }}>
-          <Text style={styles.text1}>Awards</Text>
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+      <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container1}>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Academic');
+            }}>
+            <Text style={styles.text1}>Academic Performance</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Certifications');
+            }}>
+            <Text style={styles.text1}>Other Certifications</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Awards');
+            }}>
+            <Text style={styles.text1}>Awards</Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </>
   );
 };
 
