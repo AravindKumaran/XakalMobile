@@ -1,11 +1,13 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Feather from 'react-native-vector-icons/Feather';
-import Whiteboard from '../screens/Whiteboard';
-import Assessments from '../screens/Assessments';
-import Attendance from '../screens/Attendance';
-import Payment from '../screens/Payment';
-import Profile from '../screens/Profile';
+import Whiteboard from '../../screens/StaffManagement/Whiteboard';
+import Assessments from '../../screens/StaffManagement/Assessments';
+import Attendance from '../../screens/StaffManagement/Attendance';
+import Payment from '../../screens/StaffManagement/Payment';
+import Profile from '../../screens/StaffManagement/Profile';
+import Transport from '../../screens/StaffManagement/Transport';
+import TimeTable from '../../screens/StaffManagement/TimeTable';
 import DrawerContent from './DrawerContent';
 import DashboardNavigator from './DashboardNavigator';
 import NotesNavigator from './NotesNavigator';
@@ -92,6 +94,28 @@ const DrawerNavigator = () => (
       options={{
         drawerIcon: ({color, size}) => (
           <Feather name="database" size={size} color={color} />
+        ),
+        headerShown: false,
+        unmountOnBlur: true,
+      }}
+    />
+    <Drawer.Screen
+      name="TimeTable"
+      component={TimeTable}
+      options={{
+        drawerIcon: ({color, size}) => (
+          <Feather name="clock" size={size} color={color} />
+        ),
+        headerShown: false,
+        unmountOnBlur: true,
+      }}
+    />
+    <Drawer.Screen
+      name="Transport"
+      component={Transport}
+      options={{
+        drawerIcon: ({color, size}) => (
+          <Feather name="truck" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,

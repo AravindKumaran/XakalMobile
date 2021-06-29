@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Academic from '../screens/Academic';
-import Certifications from '../screens/Certifications';
-import Awards from '../screens/Awards';
-import Dashboard from '../screens/Dashboard';
+import Academic from '../../screens/StudentManagement/Academic';
+import Certifications from '../../screens/StudentManagement/Certifications';
+import Awards from '../../screens/StudentManagement/Awards';
+import Dashboard from '../../screens/StudentManagement/Dashboard';
 
 const Stack = createStackNavigator();
 

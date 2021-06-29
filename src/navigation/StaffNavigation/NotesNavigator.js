@@ -1,9 +1,9 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Notes from '../screens/Notes';
-import ClassNotes from '../screens/ClassNotes';
-import XakalNotes from '../screens/XakalNotes';
-import QuestionPapers from '../screens/QuestionPapers';
+import Notes from '../../screens/StaffManagement/Notes';
+import ClassNotes from '../../screens/StaffManagement/ClassNotes';
+import XakalNotes from '../../screens/StaffManagement/XakalNotes';
+import QuestionPapers from '../../screens/StaffManagement/QuestionPapers';
 
 const Stack = createStackNavigator();
 
