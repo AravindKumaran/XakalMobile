@@ -7,14 +7,47 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  Dimensions,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 import {Header} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import RBSheet from 'react-native-raw-bottom-sheet';
+import Comments from '../../components/Comments';
 
-const Whiteboard = () => {
+const user = [
+  {
+    image: require('../../assets/images/xakal-logo.png'),
+    name: 'Armin',
+    created_at: '12min ago',
+    message:
+      'Try a thing you haven’t done three times. Once, to get over the fear of doing it. Twice, to learn how to do it. And a third time, to figure out whether you like it or not.',
+    likes: '12',
+    comments: '5',
+  },
+  {
+    image: require('../../assets/images/xakal-logo.png'),
+    name: 'Levi',
+    created_at: '1day ago',
+    message:
+      'We’ve heard that a million monkeys at a million keyboards could produce the complete works of Shakespeare; now, thanks to the Internet, we know that is not true.',
+    likes: '22',
+    comments: '8',
+  },
+  {
+    image: require('../../assets/images/xakal-logo.png'),
+    name: 'Mikasu',
+    created_at: '1w ago',
+    message:
+      'Imagination was given to man to compensate him for what he is not, and a sense of humor was provided to console him for what he is.',
+    likes: '30',
+    comments: '6',
+  },
+];
+
+const Whiteboard = props => {
   const refRBSheet = useRef();
+  const refRBSheet1 = useRef();
   const navigation = useNavigation();
 
   const MyCustomLeftComponent = () => {
@@ -116,130 +149,111 @@ const Whiteboard = () => {
               </View>
             </RBSheet>
           </View>
-          <View style={styles.box1}>
-            <View
-              style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
-              <Image
-                style={{
-                  height: 75,
-                  width: 75,
-                  borderRadius: 50,
-                  backgroundColor: '#F8F8F8',
-                }}
-              />
-              <View style={{flexDirection: 'column', alignContent: 'center'}}>
-                <Text style={styles.text3}>Mikasu</Text>
-                <Text style={styles.text4}>40min ago</Text>
+          {user.map(i => (
+            <>
+              <View style={styles.box1}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    margin: 10,
+                  }}>
+                  <Image
+                    source={i.image}
+                    style={{
+                      height: 75,
+                      width: 75,
+                      borderRadius: 50,
+                      backgroundColor: '#F8F8F8',
+                    }}
+                  />
+                  <View
+                    style={{flexDirection: 'column', alignContent: 'center'}}>
+                    <Text style={styles.text3}>{i.name}</Text>
+                    <Text style={styles.text4}>{i.created_at}</Text>
+                  </View>
+                </View>
+                <View
+                  style={{
+                    borderWidth: 0.5,
+                    borderColor: '#47687F',
+                    marginVertical: 5,
+                  }}
+                />
+                <Text style={styles.text5}>"{i.message}"</Text>
+
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    flex: 1,
+                    alignItems: 'flex-end',
+                    justifyContent: 'space-between',
+                  }}>
+                  <TouchableOpacity style={styles.like}>
+                    <Feather
+                      name="heart"
+                      color="#47687F"
+                      size={25}
+                      style={{
+                        marginHorizontal: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
+                    <Text style={styles.text6}>{i.likes}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.like}
+                    onPress={() => refRBSheet1.current.open()}>
+                    <Feather
+                      name="message-circle"
+                      color="#47687F"
+                      size={25}
+                      style={{
+                        marginHorizontal: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
+                    <Text style={styles.text6}>{i.comments}</Text>
+                    <RBSheet
+                      ref={refRBSheet1}
+                      height={Dimensions.get('window').height - 300}
+                      animationType="fade"
+                      closeOnDragDown={false}
+                      customStyles={{
+                        wrapper: {
+                          backgroundColor: 'rgba(0,0,0,.6)',
+                        },
+                        draggableIcon: {
+                          backgroundColor: '#C4C4C4',
+                        },
+                        container: {
+                          backgroundColor: '#EBEBEB',
+                          borderTopRightRadius: 25,
+                          borderTopLeftRadius: 25,
+                        },
+                      }}>
+                      <View style={{marginTop: 22, height: 40, width: 40}}>
+                        <TouchableOpacity
+                          onPress={() => refRBSheet1.current.close()}
+                          style={{
+                            top: 0,
+                            left: 10,
+                            position: 'absolute',
+                          }}>
+                          <Feather
+                            name="chevron-left"
+                            size={30}
+                            color="#20232A"
+                          />
+                        </TouchableOpacity>
+                      </View>
+                      <Comments />
+                    </RBSheet>
+                  </TouchableOpacity>
+                </View>
               </View>
-            </View>
-            <View
-              style={{
-                borderWidth: 2,
-                borderColor: '#F8F8F8',
-                marginVertical: 5,
-              }}
-            />
-            <Text style={styles.text5}>
-              “I'm selfish, impatient and a little insecure. I make mistakes, I
-              am out of control and at times hard to handle. But if you can't
-              handle me at my worst, then you sure as hell don't deserve me at
-              my best.
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                flex: 1,
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-              }}>
-              <TouchableOpacity style={styles.like}>
-                <Feather
-                  name="heart"
-                  color="#47687F"
-                  size={25}
-                  style={{
-                    marginHorizontal: 5,
-                    alignSelf: 'center',
-                  }}
-                />
-                <Text style={styles.text6}>12</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.like}>
-                <Feather
-                  name="message-circle"
-                  color="#47687F"
-                  size={25}
-                  style={{
-                    marginHorizontal: 5,
-                    alignSelf: 'center',
-                  }}
-                />
-                <Text style={styles.text6}>8</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.box1}>
-            <View
-              style={{flexDirection: 'row', alignItems: 'center', margin: 10}}>
-              <Image
-                style={{
-                  height: 75,
-                  width: 75,
-                  borderRadius: 50,
-                  backgroundColor: '#F8F8F8',
-                }}
-              />
-              <View style={{flexDirection: 'column', alignContent: 'center'}}>
-                <Text style={styles.text3}>Mikasu</Text>
-                <Text style={styles.text4}>40min ago</Text>
-              </View>
-            </View>
-            <View
-              style={{
-                borderWidth: 2,
-                borderColor: '#F8F8F8',
-                marginVertical: 5,
-              }}
-            />
-            <Text style={styles.text5}>
-              “Twenty years from now you will be more disappointed by the things
-              that you didn't do than by the ones you did do. So throw off the
-              bowlines. Sail away from the safe harbor. Catch the trade winds in
-              your sails. Explore. Dream. Discover.”
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                flex: 1,
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-              }}>
-              <TouchableOpacity style={styles.like}>
-                <Feather
-                  name="heart"
-                  color="#47687F"
-                  size={25}
-                  style={{
-                    marginHorizontal: 5,
-                    alignSelf: 'center',
-                  }}
-                />
-                <Text style={styles.text6}>18</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.like}>
-                <Feather
-                  name="message-circle"
-                  color="#47687F"
-                  size={25}
-                  style={{
-                    marginHorizontal: 5,
-                    alignSelf: 'center',
-                  }}
-                />
-                <Text style={styles.text6}>14</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+            </>
+          ))}
         </View>
       </ScrollView>
     </>
@@ -299,6 +313,8 @@ const styles = StyleSheet.create({
     width: '50%',
     justifyContent: 'center',
     flexDirection: 'row',
+    borderTopWidth: 0.5,
+    borderTopColor: '#47687F',
   },
   input1: {
     width: 300,
