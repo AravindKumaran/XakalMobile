@@ -65,12 +65,12 @@ const Profile = () => {
               <Text style={styles.text4}>Witcher</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Course</Text>
+              <Text style={styles.text3}>Designation</Text>
               <Text style={styles.text4}>B.E</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Branch</Text>
-              <Text style={styles.text4}>CSE</Text>
+              <Text style={styles.text3}>Qualification</Text>
+              <Text style={styles.text4}>M.Tech</Text>
             </View>
             <View style={styles.box}>
               <Text style={styles.text3}>Blood group</Text>
@@ -89,34 +89,24 @@ const Profile = () => {
               <Text style={styles.text4}>witcher@gmail.com</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Parents name</Text>
+              <Text style={styles.text3}>Parents/Spouse name</Text>
               <Text style={styles.text4}>Zeus</Text>
             </View>
           </View>
-          <View style={[styles.box1, {height: 330}]}>
-            <Text style={[styles.text3, {fontSize: 18}]}>
-              Educational Details
-            </Text>
+          <View style={styles.box1}>
+            <Text style={[styles.text3, {fontSize: 18}]}>Career Details</Text>
             <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
             <View style={styles.box}>
-              <Text style={styles.text3}>Student ID</Text>
-              <Text style={styles.text4}>13IT205</Text>
+              <Text style={styles.text3}>Staff ID</Text>
+              <Text style={styles.text4}>13IT100</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>CGPA</Text>
-              <Text style={styles.text4}>8.3</Text>
+              <Text style={styles.text3}>Last semester performance</Text>
+              <Text style={styles.text4}>75%</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Certifications Won</Text>
-              <Text style={styles.text4}>3</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>Awards Won</Text>
-              <Text style={styles.text4}>4</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>Leaves Taken</Text>
-              <Text style={styles.text4}>4</Text>
+              <Text style={styles.text3}>Overall performance</Text>
+              <Text style={styles.text4}>82%</Text>
             </View>
           </View>
           <TouchableOpacity style={styles.touch}>
@@ -145,12 +135,12 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 50,
+    borderRadius: 30,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 480,
     borderRadius: 30,
     marginVertical: 15,
     flexDirection: 'column',

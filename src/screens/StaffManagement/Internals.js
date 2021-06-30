@@ -22,6 +22,42 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const course_list = [
+  {label: 'Physics', value: 'Physics'},
+  {label: 'OS', value: 'OS'},
+  {label: 'Maths', value: 'Maths'},
+  {label: 'EVS', value: 'EVS'},
+  {label: 'Chemistry', value: 'Chemistry'},
+  {label: 'OOAD', value: 'OOAD'},
+];
+
+const model_list = [
+  {label: 'Model 1', value: 'Model 1'},
+  {label: 'Model 2', value: 'Model 2'},
+  {label: 'Model 3', value: 'Model 3'},
+];
+
+const student = [
+  {
+    id: '13IT200',
+    mark: '80',
+    uploaded_at: '10-5-2019',
+    uploaded_by: '13IT100',
+  },
+  {
+    id: '13IT201',
+    mark: '85',
+    uploaded_at: '10-5-2019',
+    uploaded_by: '13IT101',
+  },
+  {
+    id: '13IT202',
+    mark: '90',
+    uploaded_at: '10-5-2019',
+    uploaded_by: '13IT102',
+  },
+];
+
 const Internals = () => {
   const navigation = useNavigation();
 
@@ -29,21 +65,59 @@ const Internals = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={semester_list}
+                placeholder={{label: 'Select Semester', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#47687F"
+                //     style={{top: 12.5, right: 50}}
+                //   />
+                // )}
               />
-            )}
-          />
+            </View>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={course_list}
+                placeholder={{label: 'Select Course', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#47687F"
+                //     style={{top: 12.5, right: 50}}
+                //   />
+                // )}
+              />
+            </View>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={model_list}
+                placeholder={{label: 'Select Model', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#47687F"
+                //     style={{top: 12.5, right: 50}}
+                //   />
+                // )}
+              />
+            </View>
+          </View>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
@@ -56,54 +130,36 @@ const Internals = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Physics 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 1</Text>
-              <Text style={styles.text4}>80</Text>
+          {student.map(i => (
+            <View style={styles.box1}>
+              <View style={[styles.box, {marginVertical: 10}]}>
+                <Text style={styles.text3}>{i.id}</Text>
+                <TouchableOpacity style={styles.touch1}>
+                  <Text
+                    style={{
+                      color: '#47687F',
+                      alignSelf: 'center',
+                      fontWeight: '700',
+                    }}>
+                    Edit
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>Marks obtaines</Text>
+                <Text style={styles.text4}>{i.mark}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>Uploaded at</Text>
+                <Text style={styles.text4}>{i.uploaded_at}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>Uploaded by</Text>
+                <Text style={styles.text4}>{i.uploaded_by}</Text>
+              </View>
             </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 2</Text>
-              <Text style={styles.text4}>66</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 3</Text>
-              <Text style={styles.text4}>72</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 4</Text>
-              <Text style={styles.text4}>88</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>INTERNALS</Text>
-              <Text style={styles.text4}>16</Text>
-            </View>
-          </View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Chemistry 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 1</Text>
-              <Text style={styles.text4}>80</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 2</Text>
-              <Text style={styles.text4}>66</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 3</Text>
-              <Text style={styles.text4}>72</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 4</Text>
-              <Text style={styles.text4}>88</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>INTERNALS</Text>
-              <Text style={styles.text4}>16</Text>
-            </View>
-          </View>
+          ))}
         </View>
       </View>
     </ScrollView>
@@ -120,12 +176,12 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 50,
+    borderRadius: 30,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 330,
     borderRadius: 30,
     marginVertical: 15,
     flexDirection: 'column',
@@ -174,6 +230,17 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     elevation: 10,
   },
+  touch1: {
+    height: 30,
+    width: 80,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    borderRadius: 10,
+    marginVertical: 20,
+    alignSelf: 'center',
+    elevation: 10,
+    marginHorizontal: 10,
+  },
 });
 
 const customPickerStyles = StyleSheet.create({
@@ -183,17 +250,17 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#47687F',
     borderRadius: 8,
     color: '#47687F',
-    width: '80%',
+    width: '33.33%',
     alignSelf: 'center',
     marginBottom: 10,
   },
   inputAndroid: {
+    flex: 1,
     fontSize: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#47687F',
     borderRadius: 8,
     color: '#47687F',
-    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },

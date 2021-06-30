@@ -69,7 +69,7 @@ const Assessments = () => {
             onPress={() => {
               navigation.navigate('SemesterMarks');
             }}>
-            <Text style={styles.text1}>Semester Marks</Text>
+            <Text style={styles.text1}>Semester</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

@@ -22,6 +22,33 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const student_id = [
+  {label: '13IT200', value: '13IT200'},
+  {label: '13IT201', value: '13IT201'},
+  {label: '13IT202', value: '13IT202'},
+];
+
+const student = [
+  {
+    id: '13IT200',
+    course: 'Physics',
+    grade: 'A',
+    result: 'PASS',
+  },
+  {
+    id: '13IT201',
+    course: 'Chemistry',
+    grade: 'B',
+    result: 'PASS',
+  },
+  {
+    id: '13IT202',
+    course: 'Maths',
+    grade: 'C',
+    result: 'PASS',
+  },
+];
+
 const SemesterMarks = () => {
   const navigation = useNavigation();
 
@@ -29,21 +56,42 @@ const SemesterMarks = () => {
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={semester_list}
+                placeholder={{label: 'Select Semester', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#47687F"
+                //     style={{top: 12.5, right: 20}}
+                //   />
+                // )}
               />
-            )}
-          />
+            </View>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={student_id}
+                placeholder={{label: 'Student ID', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#47687F"
+                //     style={{top: 12.5, right: 20}}
+                //   />
+                // )}
+              />
+            </View>
+          </View>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
@@ -57,28 +105,19 @@ const SemesterMarks = () => {
         </View>
         <View>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Physics 1</Text>
+            <View style={[styles.box, {margin: 10}]}>
+              <Text style={styles.text3}>Course</Text>
+              <Text style={styles.text3}>Grade</Text>
+              <Text style={[styles.text3, {left: 0}]}>Result</Text>
+            </View>
             <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>GRADE</Text>
-              <Text style={styles.text4}>B</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>RESULT</Text>
-              <Text style={styles.text4}>PASS</Text>
-            </View>
-          </View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Chemistry 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>GRADE</Text>
-              <Text style={styles.text4}>B</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>RESULT</Text>
-              <Text style={styles.text4}>PASS</Text>
-            </View>
+            {student.map(i => (
+              <View style={[styles.box, {marginHorizontal: 10}]}>
+                <Text style={styles.text6}>{i.course}</Text>
+                <Text style={styles.text6}>{i.grade}</Text>
+                <Text style={styles.text6}>{i.result}</Text>
+              </View>
+            ))}
           </View>
         </View>
       </View>
@@ -96,12 +135,12 @@ const styles = StyleSheet.create({
   },
   box: {
     height: 50,
+    borderRadius: 30,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 180,
     borderRadius: 30,
     marginVertical: 15,
     flexDirection: 'column',
@@ -125,6 +164,7 @@ const styles = StyleSheet.create({
     color: '#47687F',
   },
   text3: {
+    flex: 1,
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
@@ -135,6 +175,15 @@ const styles = StyleSheet.create({
   text4: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
+    fontSize: 14,
+    color: '#47687F',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text6: {
+    flex: 1,
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
     fontSize: 14,
     color: '#47687F',
     alignSelf: 'center',

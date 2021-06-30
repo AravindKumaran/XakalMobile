@@ -6,8 +6,8 @@ import Assessments from '../../screens/StaffManagement/Assessments';
 import Attendance from '../../screens/StaffManagement/Attendance';
 import Payment from '../../screens/StaffManagement/Payment';
 import Profile from '../../screens/StaffManagement/Profile';
-import Transport from '../../screens/StaffManagement/Transport';
-import TimeTable from '../../screens/StaffManagement/TimeTable';
+import StudentDetails from '../../screens/StaffManagement/StudentDetails';
+import Salary from '../../screens/StaffManagement/Salary';
 import DrawerContent from './DrawerContent';
 import DashboardNavigator from './DashboardNavigator';
 import NotesNavigator from './NotesNavigator';
@@ -67,6 +67,17 @@ const DrawerNavigator = () => (
       }}
     />
     <Drawer.Screen
+      name="Student Details"
+      component={StudentDetails}
+      options={{
+        drawerIcon: ({color, size}) => (
+          <Feather name="users" size={size} color={color} />
+        ),
+        headerShown: false,
+        unmountOnBlur: true,
+      }}
+    />
+    <Drawer.Screen
       name="Notes"
       component={NotesNavigator}
       options={{
@@ -89,44 +100,11 @@ const DrawerNavigator = () => (
       }}
     />
     <Drawer.Screen
-      name="Attendance"
-      component={Attendance}
+      name="Salary"
+      component={Salary}
       options={{
         drawerIcon: ({color, size}) => (
           <Feather name="database" size={size} color={color} />
-        ),
-        headerShown: false,
-        unmountOnBlur: true,
-      }}
-    />
-    <Drawer.Screen
-      name="TimeTable"
-      component={TimeTable}
-      options={{
-        drawerIcon: ({color, size}) => (
-          <Feather name="clock" size={size} color={color} />
-        ),
-        headerShown: false,
-        unmountOnBlur: true,
-      }}
-    />
-    <Drawer.Screen
-      name="Transport"
-      component={Transport}
-      options={{
-        drawerIcon: ({color, size}) => (
-          <Feather name="truck" size={size} color={color} />
-        ),
-        headerShown: false,
-        unmountOnBlur: true,
-      }}
-    />
-    <Drawer.Screen
-      name="Payment"
-      component={Payment}
-      options={{
-        drawerIcon: ({color, size}) => (
-          <Feather name="dollar-sign" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,

@@ -6,9 +6,11 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
+import DocumentPicker from 'react-native-document-picker';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -30,10 +32,31 @@ const course_list = [
 ];
 
 const ClassNotes = () => {
+  const selectFile = async () => {
+    try {
+      const res = await DocumentPicker.pick({
+        type: [DocumentPicker.types.images],
+      });
+      console.log(
+        res.uri,
+        res.type, // mime type
+        res.name,
+        res.size,
+      );
+    } catch (err) {
+      if (DocumentPicker.isCancel(err)) {
+        // User cancelled the picker, exit any dialogs or menus and move on
+      } else {
+        throw err;
+      }
+    }
+  };
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
+          <Text style={styles.text3}>Semester</Text>
           <RNPickerSelect
             useNativeAndroidPickerStyle={false}
             onValueChange={value => console.log(value)}
@@ -45,10 +68,11 @@ const ClassNotes = () => {
                 name="chevron-down"
                 size={25}
                 color="#47687F"
-                style={{top: 12.5, right: 50}}
+                style={{top: 12.5, right: 10}}
               />
             )}
           />
+          <Text style={styles.text3}>Course</Text>
           <RNPickerSelect
             useNativeAndroidPickerStyle={false}
             onValueChange={value => console.log(value)}
@@ -60,10 +84,28 @@ const ClassNotes = () => {
                 name="chevron-down"
                 size={25}
                 color="#47687F"
-                style={{top: 12.5, right: 50}}
+                style={{top: 12.5, right: 10}}
               />
             )}
           />
+        </View>
+        <View>
+          <Text style={styles.text3}>Description</Text>
+          <TextInput style={styles.input1} multiline={true} numberOfLines={5} />
+          <TouchableOpacity onPress={selectFile}>
+            <View style={styles.button}>
+              <Feather name="arrow-up-circle" size={20} color="#4DD1EF" />
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: '#47687F',
+                  fontWeight: '700',
+                  marginHorizontal: 10,
+                }}>
+                Choose File
+              </Text>
+            </View>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
@@ -71,69 +113,9 @@ const ClassNotes = () => {
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
-              Get Results!
+              Upload
             </Text>
           </TouchableOpacity>
-        </View>
-        <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
         </View>
       </View>
     </ScrollView>
@@ -176,6 +158,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#47687F',
   },
+  text3: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 18,
+    color: '#47687F',
+    marginVertical: 5,
+  },
   touch: {
     height: 50,
     width: 200,
@@ -184,6 +173,33 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginVertical: 20,
     alignSelf: 'center',
+    elevation: 10,
+  },
+  input1: {
+    width: 300,
+    height: 150,
+    textAlignVertical: 'top',
+    borderRadius: 10,
+    alignItems: 'center',
+    color: '#47687F',
+    fontWeight: '400',
+    fontSize: 14,
+    borderWidth: 0.5,
+    borderColor: '#737373',
+    margin: 20,
+  },
+  button: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 75,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    alignSelf: 'center',
+    padding: 10,
+    width: 320,
+    height: 60,
+    marginVertical: 20,
     elevation: 10,
   },
 });
@@ -205,7 +221,7 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#47687F',
     borderRadius: 8,
     color: '#47687F',
-    width: '80%',
+    width: '100%',
     alignSelf: 'center',
     marginBottom: 10,
   },

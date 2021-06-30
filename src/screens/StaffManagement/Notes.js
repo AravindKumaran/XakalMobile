@@ -67,13 +67,6 @@ const Notes = () => {
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('XakalNotes');
-            }}>
-            <Text style={styles.text1}>XAKAL Notes</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.box}
-            onPress={() => {
               navigation.navigate('QuestionPapers');
             }}>
             <Text style={styles.text1}>Question Papers</Text>

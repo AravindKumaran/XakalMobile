@@ -9,6 +9,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {Header} from 'react-native-elements';
 import Feather from 'react-native-vector-icons/Feather';
+import Pie from 'react-native-pie';
 
 const Dashboard = () => {
   const navigation = useNavigation();
@@ -57,27 +58,43 @@ const Dashboard = () => {
       />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.container1}>
-          <TouchableOpacity
-            style={styles.box}
-            onPress={() => {
-              navigation.navigate('Academic');
-            }}>
-            <Text style={styles.text1}>Academic Performance</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.box}
-            onPress={() => {
-              navigation.navigate('Certifications');
-            }}>
-            <Text style={styles.text1}>Other Certifications</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.box}
-            onPress={() => {
-              navigation.navigate('Awards');
-            }}>
-            <Text style={styles.text1}>Awards</Text>
-          </TouchableOpacity>
+          <View style={{alignItems: 'center'}}>
+            <View style={{flexDirection: 'column', alignItems: 'center'}}>
+              <Text style={styles.text1}>LAST SEMESTER PERFORMANCE</Text>
+              <Pie
+                radius={80}
+                innerRadius={70}
+                sections={[
+                  {
+                    percentage: 75,
+                    color: '#404FCD',
+                  },
+                ]}
+                backgroundColor="#ddd"
+              />
+              <View style={styles.box1}>
+                <Text style={styles.text2}>75%</Text>
+              </View>
+            </View>
+
+            <View style={{flexDirection: 'column', alignItems: 'center'}}>
+              <Text style={styles.text1}>OVERALL PERFORMANCE</Text>
+              <Pie
+                radius={80}
+                innerRadius={70}
+                sections={[
+                  {
+                    percentage: 82,
+                    color: '#EBD22F',
+                  },
+                ]}
+                backgroundColor="#ddd"
+              />
+              <View style={styles.box1}>
+                <Text style={styles.text2}>82%</Text>
+              </View>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </>
@@ -110,6 +127,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#47687F',
     alignSelf: 'center',
+    marginVertical: 15,
+  },
+  box1: {
+    position: 'absolute',
+    height: 270,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text2: {
+    backgroundColor: 'transparent',
+    color: '#000',
+    fontSize: 24,
   },
 });
 
