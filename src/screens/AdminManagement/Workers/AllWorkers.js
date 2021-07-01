@@ -58,10 +58,10 @@ const AllWorkers = () => {
       <View style={styles.container1}>
         <View>
           <View style={styles.box1}>
-            <View style={[styles.box, {margin: 10}]}>
+            <View style={[styles.box, {marginVertical: 10}]}>
               <Text style={styles.text3}>User ID</Text>
-              <Text style={styles.text3}>Name</Text>
-              <Text style={[styles.text3, {left: 20}]}>Details</Text>
+              <Text style={[styles.text3, {left: 10}]}>Name</Text>
+              <Text style={[styles.text3, {left: 30}]}>Details</Text>
             </View>
             <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             {workers.map(i => (

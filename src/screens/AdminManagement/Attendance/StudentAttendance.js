@@ -141,7 +141,7 @@ const StudentAttendance = () => {
         <View>
           {leave.map(i => (
             <View style={styles.box1}>
-              <View style={styles.box}>
+              <View style={[styles.box, {marginVertical: 10}]}>
                 <Text style={styles.text3}>STUDENT ID</Text>
                 <Text style={styles.text4}>{i.id}</Text>
               </View>

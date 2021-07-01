@@ -58,7 +58,9 @@ const Profile = () => {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.container1}>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>College Details</Text>
+            <Text style={[styles.text3, {fontSize: 18, margin: 20}]}>
+              College Details
+            </Text>
             <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>College Name</Text>
@@ -90,7 +92,9 @@ const Profile = () => {
             </View>
           </View>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Other Details</Text>
+            <Text style={[styles.text3, {fontSize: 18, margin: 20}]}>
+              Other Details
+            </Text>
             <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>Colege Code</Text>

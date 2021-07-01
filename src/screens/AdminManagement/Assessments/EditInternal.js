@@ -155,7 +155,7 @@ const EditInternal = () => {
         <View>
           {internal.map(i => (
             <View style={styles.box1}>
-              <View style={styles.box}>
+            <View style={[styles.box, {marginVertical: 10}]}>
                 <Text style={styles.text3}>{i.id}</Text>
                 <TouchableOpacity style={styles.touch1}>
                   <Text
