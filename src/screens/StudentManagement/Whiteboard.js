@@ -56,7 +56,7 @@ const Whiteboard = props => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -138,7 +138,7 @@ const Whiteboard = props => {
                     }}>
                     <Text
                       style={{
-                        color: '#47687F',
+                        color: '#476880',
                         alignSelf: 'center',
                         fontWeight: '700',
                       }}>
@@ -176,7 +176,7 @@ const Whiteboard = props => {
                 <View
                   style={{
                     borderWidth: 0.5,
-                    borderColor: '#47687F',
+                    borderColor: '#476880',
                     marginVertical: 5,
                   }}
                 />
@@ -192,7 +192,7 @@ const Whiteboard = props => {
                   <TouchableOpacity style={styles.like}>
                     <Feather
                       name="heart"
-                      color="#47687F"
+                      color="#476880"
                       size={25}
                       style={{
                         marginHorizontal: 5,
@@ -206,7 +206,7 @@ const Whiteboard = props => {
                     onPress={() => refRBSheet1.current.open()}>
                     <Feather
                       name="message-circle"
-                      color="#47687F"
+                      color="#476880"
                       size={25}
                       style={{
                         marginHorizontal: 5,
@@ -281,14 +281,14 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     marginLeft: 10,
   },
   text4: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     marginLeft: 10,
   },
@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 10,
   },
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     alignItems: 'center',
   },
@@ -314,7 +314,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     borderTopWidth: 0.5,
-    borderTopColor: '#47687F',
+    borderTopColor: '#476880',
   },
   input1: {
     width: 300,
@@ -322,7 +322,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
     borderRadius: 10,
     alignItems: 'center',
-    color: '#47687F',
+    color: '#476880',
     fontWeight: '400',
     fontSize: 14,
     borderWidth: 0.5,

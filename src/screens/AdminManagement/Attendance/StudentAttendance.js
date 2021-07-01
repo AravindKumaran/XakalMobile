@@ -10,6 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
+import {Header} from 'react-native-elements';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -22,45 +23,53 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const course_list = [
-  {label: 'Physics', value: 'Physics'},
-  {label: 'OS', value: 'OS'},
-  {label: 'Maths', value: 'Maths'},
-  {label: 'EVS', value: 'EVS'},
-  {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'OOAD', value: 'OOAD'},
+const department_list = [
+  {label: 'CSE', value: 'CSE'},
+  {label: 'IT', value: 'IT'},
+  {label: 'ECE', value: 'ECE'},
+  {label: 'EEE', value: 'EEE'},
 ];
 
-const model_list = [
-  {label: 'Model 1', value: 'Model 1'},
-  {label: 'Model 2', value: 'Model 2'},
-  {label: 'Model 3', value: 'Model 3'},
+const student_list = [
+  {label: 'Witcher', value: 'Witcher'},
+  {label: 'Jennifer', value: 'Jennifer'},
+  {label: 'Mikasu', value: 'Mikasu'},
+  {label: 'Catherine', value: 'Catherine'},
+  {label: 'Thunder', value: 'Thunder'},
 ];
 
-const student = [
+const leave = [
   {
-    id: '13IT200',
-    mark: '80',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT100',
+    id: '13CSE100',
+    date: '5/30/2020 - 5/31/2020',
+    reason: 'Vacation leave',
+    type: 'Leave',
+    action: 'Granted',
   },
   {
-    id: '13IT201',
-    mark: '85',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT101',
+    id: '13CSE100',
+    date: '10/4/2020 - 10/4/2020',
+    reason: 'Holiday leave',
+    type: 'Leave',
+    action: 'Denied',
   },
   {
-    id: '13IT202',
-    mark: '90',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT102',
+    id: '13CSE100',
+    date: '7/3/2020 - 7/3/2020',
+    reason: 'Learnathon',
+    type: 'OD',
+    action: 'Granted',
+  },
+  {
+    id: '13CSE100',
+    date: '10/30/2020 - 10/31/2020',
+    reason: 'Codethon',
+    type: 'OD',
+    action: 'Denied',
   },
 ];
 
-const Internals = () => {
-  const navigation = useNavigation();
-
+const StudentAttendance = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
@@ -70,8 +79,25 @@ const Internals = () => {
               <RNPickerSelect
                 useNativeAndroidPickerStyle={false}
                 onValueChange={value => console.log(value)}
+                items={department_list}
+                placeholder={{label: 'Department', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#476880"
+                //     style={{top: 12.5, right: 50}}
+                //   />
+                // )}
+              />
+            </View>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
                 items={semester_list}
-                placeholder={{label: 'Select Semester', value: null}}
+                placeholder={{label: 'Semester', value: null}}
                 style={customPickerStyles}
                 // Icon={() => (
                 //   <Feather
@@ -87,25 +113,8 @@ const Internals = () => {
               <RNPickerSelect
                 useNativeAndroidPickerStyle={false}
                 onValueChange={value => console.log(value)}
-                items={course_list}
-                placeholder={{label: 'Select Course', value: null}}
-                style={customPickerStyles}
-                // Icon={() => (
-                //   <Feather
-                //     name="chevron-down"
-                //     size={25}
-                //     color="#476880"
-                //     style={{top: 12.5, right: 50}}
-                //   />
-                // )}
-              />
-            </View>
-            <View style={{flex: 1, width: '33.33%'}}>
-              <RNPickerSelect
-                useNativeAndroidPickerStyle={false}
-                onValueChange={value => console.log(value)}
-                items={model_list}
-                placeholder={{label: 'Select Model', value: null}}
+                items={student_list}
+                placeholder={{label: 'Student', value: null}}
                 style={customPickerStyles}
                 // Icon={() => (
                 //   <Feather
@@ -130,33 +139,28 @@ const Internals = () => {
           </TouchableOpacity>
         </View>
         <View>
-          {student.map(i => (
+          {leave.map(i => (
             <View style={styles.box1}>
-              <View style={[styles.box, {marginVertical: 10}]}>
-                <Text style={styles.text3}>{i.id}</Text>
-                <TouchableOpacity style={styles.touch1}>
-                  <Text
-                    style={{
-                      color: '#476880',
-                      alignSelf: 'center',
-                      fontWeight: '700',
-                    }}>
-                    Edit
-                  </Text>
-                </TouchableOpacity>
-              </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
               <View style={styles.box}>
-                <Text style={styles.text3}>Marks obtaines</Text>
-                <Text style={styles.text4}>{i.mark}</Text>
+                <Text style={styles.text3}>STUDENT ID</Text>
+                <Text style={styles.text4}>{i.id}</Text>
+              </View>
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>DATE OF ABSENCE</Text>
+                <Text style={styles.text4}>{i.date}</Text>
               </View>
               <View style={styles.box}>
-                <Text style={styles.text3}>Uploaded at</Text>
-                <Text style={styles.text4}>{i.uploaded_at}</Text>
+                <Text style={styles.text3}>REASON</Text>
+                <Text style={styles.text4}>{i.reason}</Text>
               </View>
               <View style={styles.box}>
-                <Text style={styles.text3}>Uploaded by</Text>
-                <Text style={styles.text4}>{i.uploaded_by}</Text>
+                <Text style={styles.text3}>TYPE</Text>
+                <Text style={styles.text4}>{i.type}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>ACTION</Text>
+                <Text style={styles.text4}>{i.action}</Text>
               </View>
             </View>
           ))}
@@ -182,7 +186,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 15,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -229,17 +235,8 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
-  },
-  touch1: {
-    height: 30,
-    width: 80,
-    backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
-    borderRadius: 10,
-    marginVertical: 20,
-    alignSelf: 'center',
-    elevation: 10,
-    marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
 });
 
@@ -250,19 +247,20 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
-    width: '33.33%',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
   inputAndroid: {
-    flex: 1,
     fontSize: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
 });
-export default Internals;
+
+export default StudentAttendance;

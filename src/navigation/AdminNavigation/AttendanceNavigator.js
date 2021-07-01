@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Attendance from '../../screens/AdminManagement/Attendance/Attendance';
-import AddAttendance from '../../screens/AdminManagement/Attendance/AddAttendance';
-import AllAttendance from '../../screens/AdminManagement/Attendance/AllAttendance';
+import StudentAttendance from '../../screens/AdminManagement/Attendance/StudentAttendance';
+import ApplyLeave from '../../screens/AdminManagement/Attendance/ApplyLeave';
 
 const Stack = createStackNavigator();
 
@@ -19,15 +19,15 @@ const AttendanceNavigator = () => {
         headerTitleAlign: 'center',
         headerTintColor: '#476880',
       }}>
-       <Stack.Screen
+      <Stack.Screen
         name="Attendance"
         component={Attendance}
         options={{
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Add Attendance" component={AddAttendance} />
-      <Stack.Screen name="All Attendance" component={AllAttendance} />
+      <Stack.Screen name="Student Attendance" component={StudentAttendance} />
+      <Stack.Screen name="Apply Leave" component={ApplyLeave} />
     </Stack.Navigator>
   );
 };

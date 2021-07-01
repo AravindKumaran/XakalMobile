@@ -19,7 +19,7 @@ const Notes = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
   },
 });

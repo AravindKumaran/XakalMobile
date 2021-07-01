@@ -1,8 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Assessments from '../../screens/AdminManagement/Assessments/Assessments';
-import AddAssessments from '../../screens/AdminManagement/Assessments/AddAssessments';
-import AllAssessments from '../../screens/AdminManagement/Assessments/AllAssessments';
+import AddInternal from '../../screens/AdminManagement/Assessments/AddInternal';
+import EditInternal from '../../screens/AdminManagement/Assessments/EditInternal';
+import AddResults from '../../screens/AdminManagement/Assessments/AddResults';
+import SemesterResults from '../../screens/AdminManagement/Assessments/SemesterResults';
 
 const Stack = createStackNavigator();
 
@@ -26,8 +28,10 @@ const AssessmentsNavigator = () => {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Add Assessments" component={AddAssessments} />
-      <Stack.Screen name="All Assessments" component={AllAssessments} />
+      <Stack.Screen name="Add Internal" component={AddInternal} />
+      <Stack.Screen name="Edit Internal" component={EditInternal} />
+      <Stack.Screen name="Add Results" component={AddResults} />
+      <Stack.Screen name="Semester Results" component={SemesterResults} />
     </Stack.Navigator>
   );
 };

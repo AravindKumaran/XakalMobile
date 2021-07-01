@@ -10,6 +10,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
+import {Header} from 'react-native-elements';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -22,13 +23,27 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const department_list = [
+  {label: 'CSE', value: 'CSE'},
+  {label: 'IT', value: 'IT'},
+  {label: 'ECE', value: 'ECE'},
+  {label: 'EEE', value: 'EEE'},
+];
+
+const student_list = [
+  {label: 'Witcher', value: 'Witcher'},
+  {label: 'Jennifer', value: 'Jennifer'},
+  {label: 'Mikasu', value: 'Mikasu'},
+  {label: 'Catherine', value: 'Catherine'},
+  {label: 'Thunder', value: 'Thunder'},
+];
+
 const course_list = [
   {label: 'Physics', value: 'Physics'},
-  {label: 'OS', value: 'OS'},
-  {label: 'Maths', value: 'Maths'},
-  {label: 'EVS', value: 'EVS'},
   {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'OOAD', value: 'OOAD'},
+  {label: 'EVS', value: 'EVS'},
+  {label: 'Mathematics', value: 'Mathematics'},
+  {label: 'OOPS', value: 'OOPS'},
 ];
 
 const model_list = [
@@ -37,30 +52,38 @@ const model_list = [
   {label: 'Model 3', value: 'Model 3'},
 ];
 
-const student = [
+const internal = [
   {
-    id: '13IT200',
+    id: '13CSE100',
     mark: '80',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT100',
+    uploaded_at: '5/30/2020',
+    uploaded_by: '13CSE500',
+    action: 'Pass',
   },
   {
-    id: '13IT201',
+    id: '13CSE101',
     mark: '85',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT101',
+    uploaded_at: '5/30/2020',
+    uploaded_by: '13CSE500',
+    action: 'Pass',
   },
   {
-    id: '13IT202',
+    id: '13CSE102',
     mark: '90',
-    uploaded_at: '10-5-2019',
-    uploaded_by: '13IT102',
+    uploaded_at: '5/30/2020',
+    uploaded_by: '13CSE500',
+    action: 'Pass',
+  },
+  {
+    id: '13CSE103',
+    mark: '95',
+    uploaded_at: '5/30/2020',
+    uploaded_by: '13CSE500',
+    action: 'Pass',
   },
 ];
 
-const Internals = () => {
-  const navigation = useNavigation();
-
+const EditInternal = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
@@ -71,7 +94,7 @@ const Internals = () => {
                 useNativeAndroidPickerStyle={false}
                 onValueChange={value => console.log(value)}
                 items={semester_list}
-                placeholder={{label: 'Select Semester', value: null}}
+                placeholder={{label: 'Semester', value: null}}
                 style={customPickerStyles}
                 // Icon={() => (
                 //   <Feather
@@ -88,7 +111,7 @@ const Internals = () => {
                 useNativeAndroidPickerStyle={false}
                 onValueChange={value => console.log(value)}
                 items={course_list}
-                placeholder={{label: 'Select Course', value: null}}
+                placeholder={{label: 'Course', value: null}}
                 style={customPickerStyles}
                 // Icon={() => (
                 //   <Feather
@@ -105,7 +128,7 @@ const Internals = () => {
                 useNativeAndroidPickerStyle={false}
                 onValueChange={value => console.log(value)}
                 items={model_list}
-                placeholder={{label: 'Select Model', value: null}}
+                placeholder={{label: 'Model', value: null}}
                 style={customPickerStyles}
                 // Icon={() => (
                 //   <Feather
@@ -130,9 +153,9 @@ const Internals = () => {
           </TouchableOpacity>
         </View>
         <View>
-          {student.map(i => (
+          {internal.map(i => (
             <View style={styles.box1}>
-              <View style={[styles.box, {marginVertical: 10}]}>
+              <View style={styles.box}>
                 <Text style={styles.text3}>{i.id}</Text>
                 <TouchableOpacity style={styles.touch1}>
                   <Text
@@ -140,23 +163,28 @@ const Internals = () => {
                       color: '#476880',
                       alignSelf: 'center',
                       fontWeight: '700',
+                      fontSize: 14,
                     }}>
                     Edit
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
               <View style={styles.box}>
-                <Text style={styles.text3}>Marks obtaines</Text>
+                <Text style={styles.text3}>MARKS OBTAINED</Text>
                 <Text style={styles.text4}>{i.mark}</Text>
               </View>
               <View style={styles.box}>
-                <Text style={styles.text3}>Uploaded at</Text>
+                <Text style={styles.text3}>UPLOADED AT</Text>
                 <Text style={styles.text4}>{i.uploaded_at}</Text>
               </View>
               <View style={styles.box}>
-                <Text style={styles.text3}>Uploaded by</Text>
+                <Text style={styles.text3}>UPLOADED BY</Text>
                 <Text style={styles.text4}>{i.uploaded_by}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>RESULT</Text>
+                <Text style={styles.text4}>{i.action}</Text>
               </View>
             </View>
           ))}
@@ -182,7 +210,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 15,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -229,17 +259,21 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
   touch1: {
     height: 30,
     width: 80,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 30,
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
     marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 2.5,
   },
 });
 
@@ -250,19 +284,20 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
-    width: '33.33%',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
   inputAndroid: {
-    flex: 1,
     fontSize: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
 });
-export default Internals;
+
+export default EditInternal;

@@ -12,17 +12,18 @@ const DrawerContent = props => {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.rounded}>
-          <Feather name="user" size={30} color="#47687F" />
+          <Feather name="user" size={30} color="#476880" />
         </View>
-        <Text style={{marginBottom: 20}}>Witcher</Text>
+        <Text style={{marginBottom: 20, color: '#476880'}}>Witcher</Text>
       </View>
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
       </DrawerContentScrollView>
       <DrawerItem
         label="Logout"
+        labelStyle={{color: '#476880'}}
         icon={({color, size}) => (
-          <Feather name="log-out" color={color} size={size} />
+          <Feather name="log-out" color={'#476880'} size={size} />
         )}
         // onPress={handleLogout}
         style={styles.footer}
@@ -42,9 +43,9 @@ const styles = StyleSheet.create({
   },
   header: {
     marginTop: 50,
-    borderBottomWidth: 1,
+    borderBottomWidth: 0.5,
     padding: 10,
-    borderBottomColor: '#D1D5DA',
+    borderBottomColor: '#476880',
     alignItems: 'center',
   },
   rounded: {

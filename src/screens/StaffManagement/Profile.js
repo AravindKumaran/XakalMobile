@@ -19,7 +19,7 @@ const Profile = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -59,7 +59,7 @@ const Profile = () => {
         <View style={styles.container1}>
           <View style={styles.box1}>
             <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>Name</Text>
               <Text style={styles.text4}>Witcher</Text>
@@ -95,7 +95,7 @@ const Profile = () => {
           </View>
           <View style={styles.box1}>
             <Text style={[styles.text3, {fontSize: 18}]}>Career Details</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>Staff ID</Text>
               <Text style={styles.text4}>13IT100</Text>
@@ -112,7 +112,7 @@ const Profile = () => {
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
-                color: '#47687F',
+                color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },

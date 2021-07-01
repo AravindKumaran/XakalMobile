@@ -22,7 +22,7 @@ const Transport = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -74,7 +74,7 @@ const Transport = () => {
                 <Text style={styles.text3}>DESTINATION</Text>
                 <Text style={styles.text4}>AMBATTUR</Text>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
               <Text style={styles.text5}>
                 College - ECR - Thiruvanmiyur - Loyola - Nungambakkam - Guindy -
                 T.Nagar - Ambattur
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   text2: {
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     fontWeight: '700',
   },
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 10,
   },
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     alignItems: 'center',
   },
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
     borderRadius: 10,
     alignSelf: 'center',
-    color: '#47687F',
+    color: '#476880',
     fontWeight: '400',
     fontSize: 14,
     borderBottomWidth: 1,

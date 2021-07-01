@@ -94,7 +94,7 @@ const TimeTable = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -142,7 +142,7 @@ const TimeTable = () => {
                 <Feather
                   name="chevron-down"
                   size={25}
-                  color="#47687F"
+                  color="#476880"
                   style={{top: 12.5, right: 50}}
                 />
               )}
@@ -150,7 +150,7 @@ const TimeTable = () => {
             <TouchableOpacity style={styles.touch}>
               <Text
                 style={{
-                  color: '#47687F',
+                  color: '#476880',
                   alignSelf: 'center',
                   fontWeight: '700',
                 }}>
@@ -171,7 +171,7 @@ const TimeTable = () => {
                   <Feather
                     name={'chevron-down'}
                     size={25}
-                    color={'#47687F'}
+                    color={'#476880'}
                     style={{marginHorizontal: 15}}
                   />
                 </TouchableOpacity>
@@ -250,27 +250,27 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 20,
-    color: '#47687F',
+    color: '#476880',
     margin: 15,
   },
   text2: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
   },
   text3: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     marginLeft: 10,
   },
   text4: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     marginLeft: 10,
   },
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 10,
   },
@@ -286,14 +286,14 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     margin: 15,
   },
   text7: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     marginHorizontal: 15,
   },
   like: {
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
     borderRadius: 10,
     alignItems: 'center',
-    color: '#47687F',
+    color: '#476880',
     fontWeight: '400',
     fontSize: 14,
     borderWidth: 0.5,
@@ -331,9 +331,9 @@ const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
@@ -341,9 +341,9 @@ const customPickerStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,

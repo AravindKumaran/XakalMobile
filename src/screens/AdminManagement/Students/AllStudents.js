@@ -1,73 +1,103 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   ScrollView,
-  TouchableOpacity,
   Image,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
+import {Header} from 'react-native-elements';
+import {useNavigation} from '@react-navigation/native';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import RNPickerSelect from 'react-native-picker-select';
 
-const semester_list = [
-  {label: 'Semester 1', value: 'Semester 1'},
-  {label: 'Semester 2', value: 'Semester 2'},
-  {label: 'Semester 3', value: 'Semester 3'},
-  {label: 'Semester 4', value: 'Semester 4'},
-  {label: 'Semester 5', value: 'Semester 5'},
-  {label: 'Semester 6', value: 'Semester 6'},
-  {label: 'Semester 7', value: 'Semester 7'},
-  {label: 'Semester 8', value: 'Semester 8'},
+const year = [
+  {label: 'Year 1', value: 'Year 1'},
+  {label: 'Year 2', value: 'Year 2'},
+  {label: 'Year 3', value: 'Year 3'},
+  {label: 'Year 4', value: 'Year 4'},
 ];
 
-const course_list = [
-  {label: 'Physics', value: 'Physics'},
-  {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'EVS', value: 'EVS'},
-  {label: 'Mathematics', value: 'Mathematics'},
-  {label: 'OOPS', value: 'OOPS'},
+const department = [
+  {label: 'CSE', value: 'CSE'},
+  {label: 'IT', value: 'IT'},
+  {label: 'ECE', value: 'ECE'},
+  {label: 'EEE', value: 'EEE'},
+];
+
+const student = [
+  {
+    id: '13IT200',
+    name: 'Armin',
+  },
+  {
+    id: '13IT201',
+    name: 'Levi',
+  },
+  {
+    id: '13IT202',
+    name: 'Erwin',
+  },
+  {
+    id: '13IT203',
+    name: 'Eren',
+  },
+  {
+    id: '13IT204',
+    name: 'Mikasa',
+  },
 ];
 
 const AllStudents = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
+          <View style={{flexDirection: 'row'}}>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={year}
+                placeholder={{label: 'Select Year', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#476880"
+                //     style={{top: 12.5, right: 20}}
+                //   />
+                // )}
               />
-            )}
-          />
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={course_list}
-            placeholder={{label: 'Select Course', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
+            </View>
+            <View style={{flex: 1, width: '33.33%'}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => console.log(value)}
+                items={department}
+                placeholder={{label: 'Select Department', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#476880"
+                //     style={{top: 12.5, right: 20}}
+                //   />
+                // )}
               />
-            )}
-          />
+            </View>
+          </View>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
-                color: '#47687F',
+                color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
@@ -76,63 +106,58 @@ const AllStudents = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
+          <View style={styles.box1}>
+            <View style={[styles.box, {margin: 10}]}>
+              <Text style={styles.text3}>Roll no.</Text>
+              <Text style={styles.text3}>Name</Text>
+              <Text style={[styles.text3, {left: 20}]}>Details</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+            {student.map(i => (
+              <View style={styles.box}>
+                <Text style={styles.text6}>{i.id}</Text>
+                <Text style={styles.text6}>{i.name}</Text>
+                <TouchableOpacity style={styles.touch1}>
+                  <Text style={styles.text5}>View</Text>
+                </TouchableOpacity>
+              </View>
+            ))}
           </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
+        </View>
+        <View>
+          <View style={[styles.box2, {margin: 15, elevation: 0}]}>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Degree</Text>
+              <Text style={styles.text4}>B.E</Text>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Department</Text>
+              <Text style={styles.text4}>CSE</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Email ID</Text>
+              <Text style={styles.text4}>witcher@gmail.com</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Mobile</Text>
+              <Text style={styles.text4}>1234567890</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Emergency contact</Text>
+              <Text style={styles.text4}>1234567890</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Parents name</Text>
+              <Text style={styles.text4}>Zeus</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Admission Date</Text>
+              <Text style={styles.text4}>20-12-2019</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Blood group</Text>
+              <Text style={styles.text4}>O+</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -146,35 +171,40 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   container1: {
-    margin: 20,
+    margin: 25,
   },
   box: {
+    height: 50,
+    borderRadius: 10,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 125,
-    width: '95%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    padding: 0,
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 10,
+    marginVertical: 15,
+    flexDirection: 'column',
     elevation: 10,
     backgroundColor: '#FFFFFF',
-    marginVertical: 15,
   },
-  text: {
-    marginHorizontal: 15,
-    marginVertical: 2.5,
+  box2: {
+    flex: 1,
+    borderRadius: 10,
+    marginVertical: 15,
+    flexDirection: 'column',
+    elevation: 10,
+    backgroundColor: '#FFFFFF',
   },
   text1: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
-    fontSize: 12,
-    color: '#47687F',
-  },
-  text2: {
-    fontFamily: 'Proxima Nova',
-    fontWeight: '400',
-    fontSize: 14,
-    color: '#47687F',
+    fontSize: 18,
+    color: '#476880',
+    alignSelf: 'center',
+    marginVertical: 15,
   },
   touch: {
     height: 50,
@@ -185,6 +215,53 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+  },
+  touch1: {
+    height: 30,
+    width: 80,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    borderRadius: 35,
+    marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 2.5,
+    elevation: 10,
+  },
+  text3: {
+    flex: 1,
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text4: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '400',
+    fontSize: 14,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text5: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 14,
+    color: '#476880',
+    alignSelf: 'center',
+  },
+  text6: {
+    flex: 1,
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 14,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
   },
 });
 
@@ -192,22 +269,23 @@ const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
   inputAndroid: {
     fontSize: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomWidth: 1.5,
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
 });
+
 export default AllStudents;

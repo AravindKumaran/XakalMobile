@@ -90,7 +90,7 @@ const Comments = ({postId, postUserId, curUser, route, setCommentss}) => {
                     </Text>
                     <Text
                       style={{
-                        color: '#999999',
+                        color: '#476880',
                         fontSize: 12,
                         fontWeight: '400',
                         marginBottom: 20,
@@ -110,7 +110,7 @@ const Comments = ({postId, postUserId, curUser, route, setCommentss}) => {
         <Feather
           name="chevron-down"
           size={30}
-          color="#999999"
+          color="#476880"
           style={{
             alignContent: 'center',
             alignSelf: 'center',

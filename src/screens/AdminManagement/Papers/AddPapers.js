@@ -6,9 +6,11 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
+import ToggleSwitch from 'toggle-switch-react-native';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -29,111 +31,95 @@ const course_list = [
   {label: 'OOPS', value: 'OOPS'},
 ];
 
+const department = [
+  {label: 'CSE', value: 'CSE'},
+  {label: 'IT', value: 'IT'},
+  {label: 'ECE', value: 'ECE'},
+  {label: 'EEE', value: 'EEE'},
+];
+
 const AddPapers = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
-        <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={course_list}
-            placeholder={{label: 'Select Course', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
+        <View style={{marginHorizontal: 20}}>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Name"
+              placeholderTextColor="#476880"
+            />
+          </View>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Code"
+              placeholderTextColor="#476880"
+            />
+          </View>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Credits"
+              placeholderTextColor="#476880"
+            />
+          </View>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Department"
+              placeholderTextColor="#476880"
+            />
+          </View>
+          <View style={styles.inputView}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Semester"
+              placeholderTextColor="#476880"
+            />
+          </View>
+          <View style={{alignSelf: 'center', marginVertical: 10}}>
+            <ToggleSwitch
+              isOn={true}
+              onColor="#4e73df"
+              offColor="#476880"
+              label="Elective"
+              labelStyle={styles.text1}
+              onToggle={isOn => console.log('changed to : ', isOn)}
+            />
+          </View>
+        </View>
+        <View style={{flexDirection: 'row', alignSelf: 'center'}}>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
-                color: '#47687F',
+                color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
-              Get Results!
+              Add
             </Text>
           </TouchableOpacity>
-        </View>
-        <View>
-          <View style={styles.box}>
-            <View
+          <TouchableOpacity style={styles.touch}>
+            <Text
               style={{
-                flexDirection: 'column',
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
               }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.box}>
-            <View
+              Save
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touch}>
+            <Text
               style={{
-                flexDirection: 'column',
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
               }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
+              Cancel
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
@@ -167,24 +153,46 @@ const styles = StyleSheet.create({
   text1: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
-    fontSize: 12,
-    color: '#47687F',
+    fontSize: 18,
+    color: '#476880',
+    marginHorizontal: 15,
   },
   text2: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
   },
   touch: {
     height: 50,
-    width: 200,
+    width: '30%',
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     borderRadius: 50,
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+  },
+  inputView: {
+    width: '100%',
+    backgroundColor: 'white',
+    height: 50,
+    marginBottom: 20,
+    justifyContent: 'center',
+    padding: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: '#476880',
+    fontFamily: 'Proxima-Nova',
+    alignSelf: 'center',
+  },
+  inputText: {
+    fontSize: 16,
+    height: 50,
+    color: '#476880',
+    fontWeight: '400',
   },
 });
 
@@ -192,9 +200,9 @@ const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
@@ -202,9 +210,9 @@ const customPickerStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,

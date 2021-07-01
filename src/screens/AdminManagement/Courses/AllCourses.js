@@ -29,111 +29,68 @@ const course_list = [
   {label: 'OOPS', value: 'OOPS'},
 ];
 
+const courses = [
+  {
+    department: 'CSE',
+    duration: '4',
+    year: '1990',
+    capacity: '300',
+  },
+  {
+    department: 'IT',
+    duration: '4',
+    year: '1995',
+    capacity: '250',
+  },
+  {
+    department: 'ECE',
+    duration: '4',
+    year: '2000',
+    capacity: '200',
+  },
+  {
+    department: 'EEE',
+    duration: '4',
+    year: '2005',
+    capacity: '150',
+  },
+];
+
 const AllCourses = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={semester_list}
-            placeholder={{label: 'Select Semester', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={course_list}
-            placeholder={{label: 'Select Course', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#47687F"
-                style={{top: 12.5, right: 50}}
-              />
-            )}
-          />
-          <TouchableOpacity style={styles.touch}>
-            <Text
-              style={{
-                color: '#47687F',
-                alignSelf: 'center',
-                fontWeight: '700',
-              }}>
-              Get Results!
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
+          {courses.map(i => (
+            <View style={styles.box1}>
+              <View style={[styles.box, {marginVertical: 10}]}>
+                <Text style={styles.text3}>{i.department}</Text>
+                <TouchableOpacity style={styles.touch1}>
+                  <Text
+                    style={{
+                      color: '#476880',
+                      alignSelf: 'center',
+                      fontWeight: '700',
+                    }}>
+                    Edit
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>Duration</Text>
+                <Text style={styles.text4}>{i.duration}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>Starting Year</Text>
+                <Text style={styles.text4}>{i.year}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>Student Capacity</Text>
+                <Text style={styles.text4}>{i.capacity}</Text>
+              </View>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#47687F'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
+          ))}
         </View>
       </View>
     </ScrollView>
@@ -149,16 +106,20 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    height: 50,
+    borderRadius: 30,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 125,
-    width: '95%',
-    alignSelf: 'center',
-    borderRadius: 20,
-    padding: 0,
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 15,
+    marginVertical: 15,
+    flexDirection: 'column',
     elevation: 10,
     backgroundColor: '#FFFFFF',
-    marginVertical: 15,
   },
   text: {
     marginHorizontal: 15,
@@ -168,13 +129,29 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 12,
-    color: '#47687F',
+    color: '#476880',
   },
   text2: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
+  },
+  text3: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text4: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '400',
+    fontSize: 14,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
   },
   touch: {
     height: 50,
@@ -186,15 +163,28 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     elevation: 10,
   },
+  touch1: {
+    height: 30,
+    width: 80,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    borderRadius: 30,
+    marginVertical: 20,
+    alignSelf: 'center',
+    elevation: 10,
+    marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 2.5,
+  },
 });
 
 const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
@@ -202,9 +192,9 @@ const customPickerStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,

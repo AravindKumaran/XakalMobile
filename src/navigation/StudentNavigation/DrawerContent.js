@@ -12,7 +12,7 @@ const DrawerContent = props => {
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.rounded}>
-          <Feather name="user" size={30} color="#47687F" />
+          <Feather name="user" size={30} color="#476880" />
         </View>
         <Text style={{marginBottom: 20}}>Witcher</Text>
       </View>

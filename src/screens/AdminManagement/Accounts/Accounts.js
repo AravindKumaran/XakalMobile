@@ -19,7 +19,7 @@ const Accounts = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -60,16 +60,23 @@ const Accounts = () => {
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('Add Accounts');
+              navigation.navigate('Salary Account');
             }}>
-            <Text style={styles.text1}>Class Accounts</Text>
+            <Text style={styles.text1}>Salary</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('All Accounts');
+              navigation.navigate('Fees Account');
             }}>
-            <Text style={styles.text1}>Question Papers</Text>
+            <Text style={styles.text1}>Fees</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Workers Account');
+            }}>
+            <Text style={styles.text1}>Workers</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -86,8 +93,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     marginBottom: 30,
     borderRadius: 20,
     height: 100,
@@ -101,7 +108,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
   },
 });

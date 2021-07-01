@@ -19,7 +19,7 @@ const Profile = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -58,50 +58,50 @@ const Profile = () => {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.container1}>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <Text style={[styles.text3, {fontSize: 18}]}>College Details</Text>
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
-              <Text style={styles.text3}>Name</Text>
-              <Text style={styles.text4}>Witcher</Text>
+              <Text style={styles.text3}>College Name</Text>
+              <Text style={styles.text4}>IIT</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Designation</Text>
-              <Text style={styles.text4}>B.E</Text>
+              <Text style={styles.text3}>Address</Text>
+              <Text style={styles.text4}>OMR, Chennai, Tamil Nadu, India</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Qualification</Text>
-              <Text style={styles.text4}>M.Tech</Text>
+              <Text style={styles.text3}>Total courses offered</Text>
+              <Text style={styles.text4}>4</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Blood group</Text>
-              <Text style={styles.text4}>O+</Text>
+              <Text style={styles.text3}>Contact number</Text>
+              <Text style={styles.text4}>044-1234-5678</Text>
             </View>
             <View style={styles.box}>
               <Text style={styles.text3}>Contact number</Text>
               <Text style={styles.text4}>1234567890</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Emergency contact number</Text>
-              <Text style={styles.text4}>1234567890</Text>
-            </View>
-            <View style={styles.box}>
               <Text style={styles.text3}>Email ID</Text>
-              <Text style={styles.text4}>witcher@gmail.com</Text>
+              <Text style={styles.text4}>iit@gmail.com</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Parents/Spouse name</Text>
-              <Text style={styles.text4}>Zeus</Text>
+              <Text style={styles.text3}>Awards and accrediations</Text>
+              <Text style={styles.text4}>Autonomous</Text>
             </View>
           </View>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Career Details</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+            <Text style={[styles.text3, {fontSize: 18}]}>Other Details</Text>
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
-              <Text style={styles.text3}>Staff ID</Text>
-              <Text style={styles.text4}>13IT100</Text>
+              <Text style={styles.text3}>Colege Code</Text>
+              <Text style={styles.text4}>2150</Text>
             </View>
             <View style={styles.box}>
-              <Text style={styles.text3}>Last semester performance</Text>
+              <Text style={styles.text3}>Total Students</Text>
+              <Text style={styles.text4}>244</Text>
+            </View>
+            <View style={styles.box}>
+              <Text style={styles.text3}>Last year performance</Text>
               <Text style={styles.text4}>75%</Text>
             </View>
             <View style={styles.box}>
@@ -112,11 +112,11 @@ const Profile = () => {
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
-                color: '#47687F',
+                color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
-              Edit Personal Details
+              Edit College Details
             </Text>
           </TouchableOpacity>
         </View>
@@ -141,7 +141,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -156,7 +158,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -164,7 +166,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -177,6 +179,8 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
 });
 

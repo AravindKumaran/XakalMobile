@@ -21,7 +21,7 @@ const Dashboard = () => {
         <Feather
           name="list"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
   box: {
     borderLeftColor: '#4e73df',
     borderLeftWidth: 5,
+    borderRadius: 10,
     marginBottom: 30,
-    borderRadius: 5,
     height: 100,
     width: '85%',
     alignSelf: 'center',
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     marginVertical: 15,
   },
   box1: {
@@ -164,14 +164,14 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     fontSize: 14,
     color: '#4e73df',
-    marginHorizontal: 10,
+    marginHorizontal: 15,
   },
   text4: {
     backgroundColor: 'transparent',
     color: '#5a5c69',
     fontWeight: '700',
     fontSize: 24,
-    marginHorizontal: 10,
+    marginHorizontal: 15,
   },
 });
 

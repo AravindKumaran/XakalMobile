@@ -32,7 +32,7 @@ const Attendance = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -81,7 +81,7 @@ const Attendance = () => {
                 <Feather
                   name="chevron-down"
                   size={25}
-                  color="#47687F"
+                  color="#476880"
                   style={{top: 12.5, right: 50}}
                 />
               )}
@@ -89,7 +89,7 @@ const Attendance = () => {
             <TouchableOpacity style={styles.touch}>
               <Text
                 style={{
-                  color: '#47687F',
+                  color: '#476880',
                   alignSelf: 'center',
                   fontWeight: '700',
                 }}>
@@ -103,7 +103,7 @@ const Attendance = () => {
                 <Text style={styles.text3}>STUDENT ID</Text>
                 <Text style={styles.text4}>13IT205</Text>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
               <View style={styles.box}>
                 <Text style={styles.text3}>DATE OF ABSENCE</Text>
                 <Text style={styles.text4}>10/30/2020 - 10/31/2020</Text>
@@ -122,7 +122,7 @@ const Attendance = () => {
                 <Text style={styles.text3}>STUDENT ID</Text>
                 <Text style={styles.text4}>13IT205</Text>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#47687F'}} />
+              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
               <View style={styles.box}>
                 <Text style={styles.text3}>DATE OF ABSENCE</Text>
                 <Text style={styles.text4}>11/18/2020 - 11/18/2020</Text>
@@ -173,19 +173,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 12,
-    color: '#47687F',
+    color: '#476880',
   },
   text2: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
   },
   text3: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 16,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
     margin: 15,
   },
@@ -213,9 +213,9 @@ const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
@@ -223,9 +223,9 @@ const customPickerStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,

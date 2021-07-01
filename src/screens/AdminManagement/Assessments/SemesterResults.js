@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import Feather from 'react-native-vector-icons/Feather';
-import DocumentPicker from 'react-native-document-picker';
 
 const semester_list = [
   {label: 'Semester 1', value: 'Semester 1'},
@@ -31,32 +30,32 @@ const course_list = [
   {label: 'OOPS', value: 'OOPS'},
 ];
 
-const QuestionPapers = () => {
-  const selectFile = async () => {
-    try {
-      const res = await DocumentPicker.pick({
-        type: [DocumentPicker.types.images],
-      });
-      console.log(
-        res.uri,
-        res.type, // mime type
-        res.name,
-        res.size,
-      );
-    } catch (err) {
-      if (DocumentPicker.isCancel(err)) {
-        // User cancelled the picker, exit any dialogs or menus and move on
-      } else {
-        throw err;
-      }
-    }
-  };
+const student = [
+  {
+    id: '13IT200',
+    course: 'Physics',
+    grade: 'A',
+    result: 'PASS',
+  },
+  {
+    id: '13IT201',
+    course: 'Chemistry',
+    grade: 'B',
+    result: 'PASS',
+  },
+  {
+    id: '13IT202',
+    course: 'Maths',
+    grade: 'C',
+    result: 'PASS',
+  },
+];
 
+const SemesterResults = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <Text style={styles.text3}>Semester</Text>
           <RNPickerSelect
             useNativeAndroidPickerStyle={false}
             onValueChange={value => console.log(value)}
@@ -68,44 +67,17 @@ const QuestionPapers = () => {
                 name="chevron-down"
                 size={25}
                 color="#476880"
-                style={{top: 12.5, right: 10}}
+                style={{top: 12.5, right: 50}}
               />
             )}
           />
-          <Text style={styles.text3}>Course</Text>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={course_list}
-            placeholder={{label: 'Select Course', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#476880"
-                style={{top: 12.5, right: 10}}
-              />
-            )}
-          />
-        </View>
-        <View>
-          <Text style={styles.text3}>Description</Text>
-          <TextInput style={styles.input1} multiline={true} numberOfLines={5} />
-          <TouchableOpacity onPress={selectFile}>
-            <View style={styles.button}>
-              <Feather name="arrow-up-circle" size={20} color="#4DD1EF" />
-              <Text
-                style={{
-                  fontSize: 12,
-                  color: '#476880',
-                  fontWeight: '700',
-                  marginHorizontal: 10,
-                }}>
-                Choose File
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <View style={[styles.inputView, {width: '80%'}]}>
+            <TextInput
+              style={styles.inputText}
+              placeholder="Student ID"
+              placeholderTextColor="#476880"
+            />
+          </View>
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
@@ -113,9 +85,26 @@ const QuestionPapers = () => {
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
-              Upload
+              Get Results!
             </Text>
           </TouchableOpacity>
+        </View>
+        <View>
+          <View style={styles.box1}>
+            <View style={[styles.box, {margin: 10}]}>
+              <Text style={styles.text3}>Course</Text>
+              <Text style={styles.text3}>Grade</Text>
+              <Text style={[styles.text3, {left: 0}]}>Result</Text>
+            </View>
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+            {student.map(i => (
+              <View style={[styles.box, {marginHorizontal: 10}]}>
+                <Text style={styles.text6}>{i.course}</Text>
+                <Text style={styles.text6}>{i.grade}</Text>
+                <Text style={styles.text6}>{i.result}</Text>
+              </View>
+            ))}
+          </View>
         </View>
       </View>
     </ScrollView>
@@ -131,16 +120,20 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    height: 50,
+    borderRadius: 30,
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    alignItems: 'center',
-    height: 125,
-    width: '95%',
-    alignSelf: 'center',
+    backgroundColor: '#FFFFFF',
+  },
+  box1: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     borderRadius: 20,
-    padding: 0,
+    marginVertical: 15,
+    flexDirection: 'column',
     elevation: 10,
     backgroundColor: '#FFFFFF',
-    marginVertical: 15,
   },
   text: {
     marginHorizontal: 15,
@@ -159,11 +152,22 @@ const styles = StyleSheet.create({
     color: '#476880',
   },
   text3: {
+    flex: 1,
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
-    fontSize: 18,
+    fontSize: 16,
     color: '#476880',
-    marginVertical: 5,
+    alignSelf: 'center',
+    margin: 15,
+  },
+  text6: {
+    flex: 1,
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 14,
+    color: '#476880',
+    alignSelf: 'center',
+    margin: 15,
   },
   touch: {
     height: 50,
@@ -174,33 +178,26 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
-  input1: {
-    width: 300,
-    height: 150,
-    textAlignVertical: 'top',
-    borderRadius: 10,
-    alignItems: 'center',
+  inputView: {
+    width: '100%',
+    backgroundColor: 'white',
+    height: 50,
+    marginBottom: 20,
+    justifyContent: 'center',
+    padding: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: '#476880',
+    fontFamily: 'Proxima-Nova',
+    alignSelf: 'center',
+  },
+  inputText: {
+    fontSize: 16,
+    height: 50,
     color: '#476880',
     fontWeight: '400',
-    fontSize: 14,
-    borderWidth: 0.5,
-    borderColor: '#737373',
-    margin: 20,
-  },
-  button: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 75,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    alignSelf: 'center',
-    padding: 10,
-    width: 320,
-    height: 60,
-    marginVertical: 20,
-    elevation: 10,
   },
 });
 
@@ -221,9 +218,9 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
-    width: '100%',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
 });
-export default QuestionPapers;
+export default SemesterResults;

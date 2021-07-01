@@ -67,7 +67,7 @@ const ClassNotes = () => {
               <Feather
                 name="chevron-down"
                 size={25}
-                color="#47687F"
+                color="#476880"
                 style={{top: 12.5, right: 10}}
               />
             )}
@@ -83,7 +83,7 @@ const ClassNotes = () => {
               <Feather
                 name="chevron-down"
                 size={25}
-                color="#47687F"
+                color="#476880"
                 style={{top: 12.5, right: 10}}
               />
             )}
@@ -98,7 +98,7 @@ const ClassNotes = () => {
               <Text
                 style={{
                   fontSize: 12,
-                  color: '#47687F',
+                  color: '#476880',
                   fontWeight: '700',
                   marginHorizontal: 10,
                 }}>
@@ -109,7 +109,7 @@ const ClassNotes = () => {
           <TouchableOpacity style={styles.touch}>
             <Text
               style={{
-                color: '#47687F',
+                color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
@@ -150,19 +150,19 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 12,
-    color: '#47687F',
+    color: '#476880',
   },
   text2: {
     fontFamily: 'Proxima Nova',
     fontWeight: '400',
     fontSize: 14,
-    color: '#47687F',
+    color: '#476880',
   },
   text3: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     marginVertical: 5,
   },
   touch: {
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'top',
     borderRadius: 10,
     alignItems: 'center',
-    color: '#47687F',
+    color: '#476880',
     fontWeight: '400',
     fontSize: 14,
     borderWidth: 0.5,
@@ -208,9 +208,9 @@ const customPickerStyles = StyleSheet.create({
   inputIOS: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
@@ -218,9 +218,9 @@ const customPickerStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 15,
     borderBottomWidth: 1,
-    borderBottomColor: '#47687F',
+    borderBottomColor: '#476880',
     borderRadius: 8,
-    color: '#47687F',
+    color: '#476880',
     width: '100%',
     alignSelf: 'center',
     marginBottom: 10,

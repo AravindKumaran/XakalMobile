@@ -19,7 +19,7 @@ const Assessments = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -60,16 +60,30 @@ const Assessments = () => {
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('Add Assessments');
+              navigation.navigate('Add Internal');
             }}>
-            <Text style={styles.text1}>Class Assessments</Text>
+            <Text style={styles.text1}>Add Internal</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('All Assessments');
+              navigation.navigate('Edit Internal');
             }}>
-            <Text style={styles.text1}>Question Papers</Text>
+            <Text style={styles.text1}>Edit Internal</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Add Results');
+            }}>
+            <Text style={styles.text1}>Add Results</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.box}
+            onPress={() => {
+              navigation.navigate('Semester Results');
+            }}>
+            <Text style={styles.text1}>Semester Results</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -86,8 +100,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     marginBottom: 30,
     borderRadius: 20,
     height: 100,
@@ -101,7 +115,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
   },
 });

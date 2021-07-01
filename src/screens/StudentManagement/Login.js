@@ -20,7 +20,7 @@ const Login = () => {
         <TextInput
           style={styles.inputText}
           placeholder="ID"
-          placeholderTextColor="#999999"
+          placeholderTextColor="#476880"
         />
       </View>
       <View style={styles.inputView}>
@@ -28,7 +28,7 @@ const Login = () => {
           secureTextEntry
           style={styles.inputText}
           placeholder="Password"
-          placeholderTextColor="#999999"
+          placeholderTextColor="#476880"
         />
       </View>
       <TouchableOpacity style={styles.loginBtn}>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 0,
     borderBottomWidth: 2,
-    borderBottomColor: 'grey',
+    borderBottomColor: '#476880',
     fontFamily: 'Proxima-Nova',
   },
   inputText: {

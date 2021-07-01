@@ -23,15 +23,44 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const course_list = [
-  {label: 'Physics', value: 'Physics'},
-  {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'EVS', value: 'EVS'},
-  {label: 'Mathematics', value: 'Mathematics'},
-  {label: 'OOPS', value: 'OOPS'},
+const student_list = [
+  {label: 'Witcher', value: 'Witcher'},
+  {label: 'Jennifer', value: 'Jennifer'},
+  {label: 'Mikasu', value: 'Mikasu'},
+  {label: 'Catherine', value: 'Catherine'},
+  {label: 'Thunder', value: 'Thunder'},
 ];
 
-const QuestionPapers = () => {
+const month_list = [
+  {label: 'January', value: 'January'},
+  {label: 'February', value: 'February'},
+  {label: 'March', value: 'March'},
+  {label: 'April', value: 'April'},
+  {label: 'May', value: 'May'},
+  {label: 'June', value: 'June'},
+  {label: 'July', value: 'July'},
+  {label: 'August', value: 'August'},
+  {label: 'September', value: 'September'},
+  {label: 'October', value: 'October'},
+  {label: 'November', value: 'November'},
+  {label: 'December', value: 'December'},
+];
+
+const year_list = [
+  {label: '2018', value: '2018'},
+  {label: '2019', value: '2019'},
+  {label: '2020', value: '2020'},
+  {label: '2021', value: '2021'},
+];
+
+const department_list = [
+  {label: 'CSE', value: 'CSE'},
+  {label: 'IT', value: 'IT'},
+  {label: 'ECE', value: 'ECE'},
+  {label: 'EEE', value: 'EEE'},
+];
+
+const FeesAccount = () => {
   const selectFile = async () => {
     try {
       const res = await DocumentPicker.pick({
@@ -51,12 +80,52 @@ const QuestionPapers = () => {
       }
     }
   };
-
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={styles.container1}>
         <View>
-          <Text style={styles.text3}>Semester</Text>
+          <RNPickerSelect
+            useNativeAndroidPickerStyle={false}
+            onValueChange={value => console.log(value)}
+            items={department_list}
+            placeholder={{label: 'Select Department', value: null}}
+            style={customPickerStyles}
+            Icon={() => (
+              <Feather
+                name="chevron-down"
+                size={25}
+                color="#476880"
+                style={{top: 12.5, right: 50}}
+              />
+            )}
+          />
+          <TouchableOpacity style={styles.touch}>
+            <Text
+              style={{
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Get Results!
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <RNPickerSelect
+            useNativeAndroidPickerStyle={false}
+            onValueChange={value => console.log(value)}
+            items={student_list}
+            placeholder={{label: 'Select Student', value: null}}
+            style={customPickerStyles}
+            Icon={() => (
+              <Feather
+                name="chevron-down"
+                size={25}
+                color="#476880"
+                style={{top: 12.5, right: 50}}
+              />
+            )}
+          />
           <RNPickerSelect
             useNativeAndroidPickerStyle={false}
             onValueChange={value => console.log(value)}
@@ -68,33 +137,13 @@ const QuestionPapers = () => {
                 name="chevron-down"
                 size={25}
                 color="#476880"
-                style={{top: 12.5, right: 10}}
+                style={{top: 12.5, right: 50}}
               />
             )}
           />
-          <Text style={styles.text3}>Course</Text>
-          <RNPickerSelect
-            useNativeAndroidPickerStyle={false}
-            onValueChange={value => console.log(value)}
-            items={course_list}
-            placeholder={{label: 'Select Course', value: null}}
-            style={customPickerStyles}
-            Icon={() => (
-              <Feather
-                name="chevron-down"
-                size={25}
-                color="#476880"
-                style={{top: 12.5, right: 10}}
-              />
-            )}
-          />
-        </View>
-        <View>
-          <Text style={styles.text3}>Description</Text>
-          <TextInput style={styles.input1} multiline={true} numberOfLines={5} />
           <TouchableOpacity onPress={selectFile}>
             <View style={styles.button}>
-              <Feather name="arrow-up-circle" size={20} color="#4DD1EF" />
+              <Feather name="arrow-up-circle" size={20} color="#4e73df" />
               <Text
                 style={{
                   fontSize: 12,
@@ -106,14 +155,36 @@ const QuestionPapers = () => {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.touch}>
+        </View>
+        <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+          <TouchableOpacity style={styles.touch1}>
             <Text
               style={{
                 color: '#476880',
                 alignSelf: 'center',
                 fontWeight: '700',
               }}>
-              Upload
+              Add
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touch1}>
+            <Text
+              style={{
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Save
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.touch1}>
+            <Text
+              style={{
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Cancel
             </Text>
           </TouchableOpacity>
         </View>
@@ -158,13 +229,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#476880',
   },
-  text3: {
-    fontFamily: 'Proxima Nova',
-    fontWeight: '700',
-    fontSize: 18,
-    color: '#476880',
-    marginVertical: 5,
-  },
   touch: {
     height: 50,
     width: 200,
@@ -174,19 +238,26 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
-  input1: {
-    width: 300,
-    height: 150,
-    textAlignVertical: 'top',
-    borderRadius: 10,
-    alignItems: 'center',
+  inputView: {
+    width: '100%',
+    backgroundColor: 'white',
+    height: 50,
+    marginBottom: 20,
+    justifyContent: 'center',
+    padding: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: '#476880',
+    fontFamily: 'Proxima-Nova',
+    alignSelf: 'center',
+  },
+  inputText: {
+    fontSize: 16,
+    height: 50,
     color: '#476880',
     fontWeight: '400',
-    fontSize: 14,
-    borderWidth: 0.5,
-    borderColor: '#737373',
-    margin: 20,
   },
   button: {
     backgroundColor: '#FFFFFF',
@@ -201,6 +272,21 @@ const styles = StyleSheet.create({
     height: 60,
     marginVertical: 20,
     elevation: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+  },
+  touch1: {
+    height: 50,
+    width: '30%',
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
+    borderRadius: 50,
+    marginVertical: 20,
+    alignSelf: 'center',
+    elevation: 10,
+    marginHorizontal: 10,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
   },
 });
 
@@ -221,9 +307,9 @@ const customPickerStyles = StyleSheet.create({
     borderBottomColor: '#476880',
     borderRadius: 8,
     color: '#476880',
-    width: '100%',
+    width: '80%',
     alignSelf: 'center',
     marginBottom: 10,
   },
 });
-export default QuestionPapers;
+export default FeesAccount;

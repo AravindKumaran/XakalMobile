@@ -19,7 +19,7 @@ const Students = () => {
         <Feather
           name="menu"
           size={25}
-          color="#47687F"
+          color="#476880"
           style={{paddingLeft: 10, top: 5}}
         />
       </TouchableOpacity>
@@ -60,16 +60,16 @@ const Students = () => {
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('Add Students');
+              navigation.navigate('All Students');
             }}>
-            <Text style={styles.text1}>Add Students</Text>
+            <Text style={styles.text1}>All Students</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
-              navigation.navigate('All Students');
+              navigation.navigate('Add Students');
             }}>
-            <Text style={styles.text1}>All Students</Text>
+            <Text style={styles.text1}>Add Students</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -86,8 +86,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     marginBottom: 30,
     borderRadius: 20,
     height: 100,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
-    color: '#47687F',
+    color: '#476880',
     alignSelf: 'center',
   },
 });

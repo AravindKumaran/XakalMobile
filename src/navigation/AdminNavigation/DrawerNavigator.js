@@ -31,8 +31,9 @@ const DrawerNavigator = () => (
     }}
     backBehavior={'order'}
     drawerContentOptions={{
-      activeBackgroundColor: '#f2f2f2',
-      activeTintColor: '#000000',
+      activeBackgroundColor: '#FFFFFF',
+      inactiveTintColor: '#476880',
+      activeTintColor: '#4e73df',
       labelStyle: {fontSize: 18},
       itemStyle: {
         borderTopRightRadius: 30,
@@ -61,7 +62,7 @@ const DrawerNavigator = () => (
       component={StudentsNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="clipboard" size={size} color={color} />
+          <Feather name="user-plus" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
@@ -105,7 +106,7 @@ const DrawerNavigator = () => (
       component={PapersNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="database" size={size} color={color} />
+          <Feather name="book-open" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
@@ -116,7 +117,7 @@ const DrawerNavigator = () => (
       component={WorkersNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="user" size={size} color={color} />
+          <Feather name="cpu" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
@@ -127,7 +128,7 @@ const DrawerNavigator = () => (
       component={AccountsNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="user" size={size} color={color} />
+          <Feather name="inbox" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
@@ -138,7 +139,7 @@ const DrawerNavigator = () => (
       component={AttendanceNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="user" size={size} color={color} />
+          <Feather name="user-minus" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
@@ -149,7 +150,7 @@ const DrawerNavigator = () => (
       component={AssessmentsNavigator}
       options={{
         drawerIcon: ({color, size}) => (
-          <Feather name="user" size={size} color={color} />
+          <Feather name="shield" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,
