@@ -138,7 +138,7 @@ const StudentDetails = () => {
             </View>
           </View>
           <View>
-            <View style={[styles.box1, {margin: 15, elevation: 0}]}>
+            <View style={[styles.box2, {margin: 15, elevation: 0}]}>
               <View style={styles.box}>
                 <Text style={styles.text3}>Degree</Text>
                 <Text style={styles.text4}>B.E CSE</Text>
@@ -192,15 +192,24 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    height: 50,
-    borderRadius: 30,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
     flex: 1,
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
+    marginVertical: 15,
+    flexDirection: 'column',
+    elevation: 10,
+    backgroundColor: '#FFFFFF',
+  },
+  box2: {
+    flex: 1,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -215,6 +224,8 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',
@@ -227,12 +238,14 @@ const styles = StyleSheet.create({
   touch1: {
     flex: 1,
     height: 30,
-    width: 90,
+    width: 80,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignSelf: 'center',
     elevation: 5,
-    borderRadius: 10,
+    borderRadius: 30,
     marginHorizontal: 10,
   },
   text3: {
@@ -255,7 +268,7 @@ const styles = StyleSheet.create({
   text5: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
-    fontSize: 10,
+    fontSize: 14,
     color: '#476880',
     alignSelf: 'center',
   },

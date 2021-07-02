@@ -1,13 +1,10 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Feather from 'react-native-vector-icons/Feather';
-import Whiteboard from '../../screens/StaffManagement/Whiteboard';
-import Assessments from '../../screens/StaffManagement/Assessments';
-import Attendance from '../../screens/StaffManagement/Attendance';
-import Payment from '../../screens/StaffManagement/Payment';
-import Profile from '../../screens/StaffManagement/Profile';
-import StudentDetails from '../../screens/StaffManagement/StudentDetails';
-import Salary from '../../screens/StaffManagement/Salary';
+import Whiteboard from '../../screens/StaffManagement/Whiteboard/Whiteboard';
+import Profile from '../../screens/StaffManagement/Profile/Profile';
+import StudentDetails from '../../screens/StaffManagement/StudentDetails/StudentDetails';
+import Salary from '../../screens/StaffManagement/Salary/Salary';
 import DrawerContent from './DrawerContent';
 import DashboardNavigator from './DashboardNavigator';
 import NotesNavigator from './NotesNavigator';
@@ -30,8 +27,9 @@ const DrawerNavigator = () => (
     }}
     backBehavior={'order'}
     drawerContentOptions={{
-      activeBackgroundColor: '#f2f2f2',
-      activeTintColor: '#000000',
+      activeBackgroundColor: '#FFFFFF',
+      inactiveTintColor: '#476880',
+      activeTintColor: '#4e73df',
       labelStyle: {fontSize: 18},
       itemStyle: {
         borderTopRightRadius: 30,

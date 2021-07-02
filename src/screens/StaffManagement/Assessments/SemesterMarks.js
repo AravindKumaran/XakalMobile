@@ -110,7 +110,7 @@ const SemesterMarks = () => {
               <Text style={styles.text3}>Grade</Text>
               <Text style={[styles.text3, {left: 0}]}>Result</Text>
             </View>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             {student.map(i => (
               <View style={[styles.box, {marginHorizontal: 10}]}>
                 <Text style={styles.text6}>{i.course}</Text>
@@ -134,14 +134,15 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
-    height: 50,
-    borderRadius: 30,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -190,6 +191,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

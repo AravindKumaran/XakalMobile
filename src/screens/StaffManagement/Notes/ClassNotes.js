@@ -94,7 +94,7 @@ const ClassNotes = () => {
           <TextInput style={styles.input1} multiline={true} numberOfLines={5} />
           <TouchableOpacity onPress={selectFile}>
             <View style={styles.button}>
-              <Feather name="arrow-up-circle" size={20} color="#4DD1EF" />
+              <Feather name="arrow-up-circle" size={20} color="#4e73df" />
               <Text
                 style={{
                   fontSize: 12,
@@ -131,6 +131,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     flexDirection: 'row',
     alignItems: 'center',
     height: 125,
@@ -166,6 +168,8 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',
@@ -189,6 +193,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   button: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     backgroundColor: '#FFFFFF',
     borderRadius: 75,
     flexDirection: 'row',

@@ -132,7 +132,7 @@ const Internals = () => {
         <View>
           {student.map(i => (
             <View style={styles.box1}>
-              <View style={[styles.box, {marginVertical: 10}]}>
+              <View style={[styles.box, {marginVertical: 0}]}>
                 <Text style={styles.text3}>{i.id}</Text>
                 <TouchableOpacity style={styles.touch1}>
                   <Text
@@ -145,7 +145,7 @@ const Internals = () => {
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
               <View style={styles.box}>
                 <Text style={styles.text3}>Marks obtaines</Text>
                 <Text style={styles.text4}>{i.mark}</Text>
@@ -175,14 +175,15 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
-    height: 50,
-    borderRadius: 30,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderRadius: 30,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -221,6 +222,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',
@@ -231,11 +234,13 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   touch1: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 30,
     width: 80,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
-    borderRadius: 10,
+    borderRadius: 30,
     marginVertical: 20,
     alignSelf: 'center',
     elevation: 10,

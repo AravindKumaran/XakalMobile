@@ -1,9 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Notes from '../../screens/StaffManagement/Notes';
-import ClassNotes from '../../screens/StaffManagement/ClassNotes';
-import XakalNotes from '../../screens/StaffManagement/XakalNotes';
-import QuestionPapers from '../../screens/StaffManagement/QuestionPapers';
+import Notes from '../../screens/StaffManagement/Notes/Notes';
+import ClassNotes from '../../screens/StaffManagement/Notes/ClassNotes';
+import QuestionPapers from '../../screens/StaffManagement/Notes/QuestionPapers';
 
 const Stack = createStackNavigator();
 
@@ -28,7 +27,6 @@ const NotesNavigator = () => {
         }}
       />
       <Stack.Screen name="ClassNotes" component={ClassNotes} />
-      <Stack.Screen name="XakalNotes" component={XakalNotes} />
       <Stack.Screen name="QuestionPapers" component={QuestionPapers} />
     </Stack.Navigator>
   );

@@ -1,8 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Assessments from '../../screens/StaffManagement/Assessments';
-import Internals from '../../screens/StaffManagement/Internals';
-import SemesterMarks from '../../screens/StaffManagement/SemesterMarks';
+import Assessments from '../../screens/StaffManagement/Assessments/Assessments';
+import Internals from '../../screens/StaffManagement/Assessments/Internals';
+import SemesterMarks from '../../screens/StaffManagement/Assessments/SemesterMarks';
 
 const Stack = createStackNavigator();
 
