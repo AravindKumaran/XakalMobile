@@ -58,8 +58,10 @@ const Profile = () => {
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.container1}>
           <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Personal Details</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+            <Text style={[styles.text3, {fontSize: 18, marginVertical: 20}]}>
+              Personal Details
+            </Text>
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>Name</Text>
               <Text style={styles.text4}>Witcher</Text>
@@ -94,10 +96,10 @@ const Profile = () => {
             </View>
           </View>
           <View style={[styles.box1, {height: 330}]}>
-            <Text style={[styles.text3, {fontSize: 18}]}>
+            <Text style={[styles.text3, {fontSize: 18, marginVertical: 20}]}>
               Educational Details
             </Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+            <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
             <View style={styles.box}>
               <Text style={styles.text3}>Student ID</Text>
               <Text style={styles.text4}>13IT205</Text>
@@ -144,14 +146,16 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    height: 50,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 480,
-    borderRadius: 30,
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -179,6 +183,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

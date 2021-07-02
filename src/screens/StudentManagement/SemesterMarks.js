@@ -22,6 +22,24 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const marks_list = [
+  {
+    course: 'Physics 1',
+    grade: 'A',
+    result: 'PASS',
+  },
+  {
+    course: 'Physics 1',
+    grade: 'B',
+    result: 'PASS',
+  },
+  {
+    course: 'Physics 1',
+    grade: 'C',
+    result: 'PASS',
+  },
+];
+
 const SemesterMarks = () => {
   const navigation = useNavigation();
 
@@ -56,30 +74,22 @@ const SemesterMarks = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Physics 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>GRADE</Text>
-              <Text style={styles.text4}>B</Text>
+          {marks_list.map(i => (
+            <View style={styles.box1}>
+              <Text style={[styles.text3, {fontSize: 18, marginVertical: 20}]}>
+                {i.course}
+              </Text>
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>GRADE</Text>
+                <Text style={styles.text4}>{i.grade}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>RESULT</Text>
+                <Text style={styles.text4}>{i.result}</Text>
+              </View>
             </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>RESULT</Text>
-              <Text style={styles.text4}>PASS</Text>
-            </View>
-          </View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Chemistry 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>GRADE</Text>
-              <Text style={styles.text4}>B</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>RESULT</Text>
-              <Text style={styles.text4}>PASS</Text>
-            </View>
-          </View>
+          ))}
         </View>
       </View>
     </ScrollView>
@@ -95,14 +105,16 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
-    height: 50,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 180,
-    borderRadius: 30,
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -141,6 +153,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

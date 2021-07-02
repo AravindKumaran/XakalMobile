@@ -29,6 +29,24 @@ const course_list = [
   {label: 'OOPS', value: 'OOPS'},
 ];
 
+const class_notes = [
+  {
+    description: 'Chapter 1',
+    uploaded_by: '10-05-2020',
+    uploaded_at: '13IT050',
+  },
+  {
+    description: 'Chapter 2',
+    uploaded_by: '05-05-2020',
+    uploaded_at: '13IT055',
+  },
+  {
+    description: 'Chapter 3',
+    uploaded_by: '18-08-2020',
+    uploaded_at: '13IT060',
+  },
+];
+
 const ClassNotes = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
@@ -76,64 +94,37 @@ const ClassNotes = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
+          {class_notes.map(i => (
+            <View style={styles.box}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                }}>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
+                  <Text style={styles.text2}>{i.description}</Text>
+                </Text>
 
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
+                  <Text style={styles.text2}>{i.uploaded_at}</Text>
+                </Text>
 
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
+                <Text style={styles.text}>
+                  <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
+                  <Text style={styles.text2}>{i.uploaded_by}</Text>
+                </Text>
+              </View>
+              <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
+                <Feather
+                  name={'arrow-down-circle'}
+                  size={25}
+                  color={'#4e73df'}
+                  style={{marginHorizontal: 15}}
+                />
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#476880'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.box}>
-            <View
-              style={{
-                flexDirection: 'column',
-              }}>
-              <Text style={styles.text}>
-                <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                <Text style={styles.text2}>Chapter 1</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED DATE:</Text>{' '}
-                <Text style={styles.text2}>05/05/2019</Text>
-              </Text>
-
-              <Text style={styles.text}>
-                <Text style={styles.text1}>UPLOADED BY:</Text>{' '}
-                <Text style={styles.text2}>13IT050</Text>
-              </Text>
-            </View>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Feather
-                name={'arrow-down-circle'}
-                size={25}
-                color={'#476880'}
-                style={{marginHorizontal: 15}}
-              />
-            </TouchableOpacity>
-          </View>
+          ))}
         </View>
       </View>
     </ScrollView>
@@ -149,6 +140,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     flexDirection: 'row',
     alignItems: 'center',
     height: 125,
@@ -177,6 +170,8 @@ const styles = StyleSheet.create({
     color: '#476880',
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

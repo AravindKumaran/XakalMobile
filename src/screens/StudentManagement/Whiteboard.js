@@ -116,6 +116,8 @@ const Whiteboard = props => {
                   width: '90%',
                   alignSelf: 'center',
                   elevation: 10,
+                  borderLeftColor: '#4e73df',
+                  borderLeftWidth: 5,
                 },
               }}>
               <View>
@@ -135,6 +137,8 @@ const Whiteboard = props => {
                       marginVertical: 20,
                       alignSelf: 'center',
                       elevation: 10,
+                      borderLeftColor: '#4e73df',
+                      borderLeftWidth: 5,
                     }}>
                     <Text
                       style={{
@@ -175,12 +179,14 @@ const Whiteboard = props => {
                 </View>
                 <View
                   style={{
-                    borderWidth: 0.5,
-                    borderColor: '#476880',
+                    borderWidth: 1,
+                    borderColor: '#4e73df',
                     marginVertical: 5,
                   }}
                 />
-                <Text style={styles.text5}>"{i.message}"</Text>
+                <Text style={[styles.text5, {marginVertical: 25}]}>
+                  "{i.message}"
+                </Text>
 
                 <View
                   style={{
@@ -269,7 +275,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box1: {
-    height: 300,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     width: '100%',
     borderRadius: 20,
     alignSelf: 'center',
@@ -313,8 +320,8 @@ const styles = StyleSheet.create({
     width: '50%',
     justifyContent: 'center',
     flexDirection: 'row',
-    borderTopWidth: 0.5,
-    borderTopColor: '#476880',
+    borderTopWidth: 1,
+    borderTopColor: '#4e73df',
   },
   input1: {
     width: 300,

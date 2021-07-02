@@ -23,6 +23,30 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const attendance_list = [
+  {
+    id: '13IT205',
+    sdate: '11/18/2020',
+    edate: '11/18/2020',
+    reason: 'Vacation leave',
+    type: 'Leave',
+  },
+  {
+    id: '13IT205',
+    sdate: '09/03/2020',
+    edate: '09/03/2020',
+    reason: 'Holiday leave',
+    type: 'Leave',
+  },
+  {
+    id: '13IT205',
+    sdate: '05/20/2020',
+    edate: '05/20/2020',
+    reason: 'Learnathon',
+    type: 'OD',
+  },
+];
+
 const Attendance = () => {
   const navigation = useNavigation();
 
@@ -98,44 +122,29 @@ const Attendance = () => {
             </TouchableOpacity>
           </View>
           <View>
-            <View style={styles.box1}>
-              <View style={styles.box}>
-                <Text style={styles.text3}>STUDENT ID</Text>
-                <Text style={styles.text4}>13IT205</Text>
+            {attendance_list.map(i => (
+              <View style={styles.box1}>
+                <View style={[styles.box, {marginVertical: 10}]}>
+                  <Text style={styles.text3}>STUDENT ID</Text>
+                  <Text style={styles.text4}>{i.id}</Text>
+                </View>
+                <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+                <View style={styles.box}>
+                  <Text style={styles.text3}>DATE OF ABSENCE</Text>
+                  <Text style={styles.text4}>
+                    {i.sdate} - {i.edate}
+                  </Text>
+                </View>
+                <View style={styles.box}>
+                  <Text style={styles.text3}>REASON</Text>
+                  <Text style={styles.text4}>{i.reason}</Text>
+                </View>
+                <View style={styles.box}>
+                  <Text style={styles.text3}>TYPE</Text>
+                  <Text style={styles.text4}>{i.type}</Text>
+                </View>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-              <View style={styles.box}>
-                <Text style={styles.text3}>DATE OF ABSENCE</Text>
-                <Text style={styles.text4}>10/30/2020 - 10/31/2020</Text>
-              </View>
-              <View style={styles.box}>
-                <Text style={styles.text3}>REASON</Text>
-                <Text style={styles.text4}>Vacation leave</Text>
-              </View>
-              <View style={styles.box}>
-                <Text style={styles.text3}>TYPE</Text>
-                <Text style={styles.text4}>Leave</Text>
-              </View>
-            </View>
-            <View style={styles.box1}>
-              <View style={styles.box}>
-                <Text style={styles.text3}>STUDENT ID</Text>
-                <Text style={styles.text4}>13IT205</Text>
-              </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-              <View style={styles.box}>
-                <Text style={styles.text3}>DATE OF ABSENCE</Text>
-                <Text style={styles.text4}>11/18/2020 - 11/18/2020</Text>
-              </View>
-              <View style={styles.box}>
-                <Text style={styles.text3}>REASON</Text>
-                <Text style={styles.text4}>Fancy leave</Text>
-              </View>
-              <View style={styles.box}>
-                <Text style={styles.text3}>TYPE</Text>
-                <Text style={styles.text4}>OD</Text>
-              </View>
-            </View>
+            ))}
           </View>
         </View>
       </ScrollView>
@@ -152,14 +161,16 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
-    height: 50,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 230,
-    borderRadius: 30,
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -198,6 +209,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

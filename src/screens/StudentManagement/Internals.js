@@ -22,6 +22,33 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const internals_list = [
+  {
+    course: 'Physics 1',
+    model_1: '89',
+    model_2: '70',
+    model_3: '68',
+    model_4: '77',
+    internal: '17',
+  },
+  {
+    course: 'Chemistry 1',
+    model_1: '69',
+    model_2: '79',
+    model_3: '88',
+    model_4: '97',
+    internal: '17',
+  },
+  {
+    course: 'Maths 1',
+    model_1: '69',
+    model_2: '90',
+    model_3: '78',
+    model_4: '77',
+    internal: '16',
+  },
+];
+
 const Internals = () => {
   const navigation = useNavigation();
 
@@ -56,54 +83,34 @@ const Internals = () => {
           </TouchableOpacity>
         </View>
         <View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Physics 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 1</Text>
-              <Text style={styles.text4}>80</Text>
+          {internals_list.map(i => (
+            <View style={styles.box1}>
+              <Text style={[styles.text3, {fontSize: 18, marginVertical: 20}]}>
+                {i.course}
+              </Text>
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
+              <View style={styles.box}>
+                <Text style={styles.text3}>MODEL 1</Text>
+                <Text style={styles.text4}>{i.model_1}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>MODEL 2</Text>
+                <Text style={styles.text4}>{i.model_2}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>MODEL 3</Text>
+                <Text style={styles.text4}>{i.model_3}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>MODEL 4</Text>
+                <Text style={styles.text4}>{i.model_4}</Text>
+              </View>
+              <View style={styles.box}>
+                <Text style={styles.text3}>INTERNALS</Text>
+                <Text style={styles.text4}>{i.internal}</Text>
+              </View>
             </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 2</Text>
-              <Text style={styles.text4}>66</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 3</Text>
-              <Text style={styles.text4}>72</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 4</Text>
-              <Text style={styles.text4}>88</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>INTERNALS</Text>
-              <Text style={styles.text4}>16</Text>
-            </View>
-          </View>
-          <View style={styles.box1}>
-            <Text style={[styles.text3, {fontSize: 18}]}>Chemistry 1</Text>
-            <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 1</Text>
-              <Text style={styles.text4}>80</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 2</Text>
-              <Text style={styles.text4}>66</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 3</Text>
-              <Text style={styles.text4}>72</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>MODEL 4</Text>
-              <Text style={styles.text4}>88</Text>
-            </View>
-            <View style={styles.box}>
-              <Text style={styles.text3}>INTERNALS</Text>
-              <Text style={styles.text4}>16</Text>
-            </View>
-          </View>
+          ))}
         </View>
       </View>
     </ScrollView>
@@ -119,14 +126,16 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
-    height: 50,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 330,
-    borderRadius: 30,
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -165,6 +174,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

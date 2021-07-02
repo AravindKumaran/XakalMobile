@@ -70,11 +70,11 @@ const Transport = () => {
           </View>
           <View>
             <View style={styles.box1}>
-              <View style={styles.box}>
+              <View style={[styles.box, {marginVertical: 10}]}>
                 <Text style={styles.text3}>DESTINATION</Text>
                 <Text style={styles.text4}>AMBATTUR</Text>
               </View>
-              <View style={{borderWidth: 0.5, borderColor: '#476880'}} />
+              <View style={{borderWidth: 1, borderColor: '#4e73df'}} />
               <Text style={styles.text5}>
                 College - ECR - Thiruvanmiyur - Loyola - Nungambakkam - Guindy -
                 T.Nagar - Ambattur
@@ -96,14 +96,16 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    height: 50,
+    borderRadius: 20,
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    height: 230,
-    borderRadius: 30,
+    flex: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 20,
     marginVertical: 15,
     flexDirection: 'column',
     elevation: 10,
@@ -136,7 +138,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#476880',
     alignSelf: 'center',
-    margin: 10,
+    marginVertical: 25,
+    marginHorizontal: 10,
   },
   text6: {
     fontFamily: 'Proxima Nova',
@@ -164,6 +167,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#737373',
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

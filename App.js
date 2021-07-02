@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import DrawerNavigator from './src/navigation/AdminNavigation/DrawerNavigator';
+import DrawerNavigator from './src/navigation/StudentNavigation/DrawerNavigator';
 
 function App() {
   return (

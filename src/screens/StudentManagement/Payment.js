@@ -23,6 +23,21 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
+const payment_list = [
+  {
+    description: 'Paid',
+    date: '10/18/2020',
+  },
+  {
+    description: 'Paid',
+    date: '06/15/2020',
+  },
+  {
+    description: 'Paid',
+    date: '03/20/2020',
+  },
+];
+
 const Payment = () => {
   const navigation = useNavigation();
 
@@ -98,54 +113,32 @@ const Payment = () => {
             </TouchableOpacity>
           </View>
           <View>
-            <View style={styles.box}>
-              <View
-                style={{
-                  flexDirection: 'column',
-                }}>
-                <Text style={styles.text}>
-                  <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                  <Text style={styles.text2}>Paid</Text>
-                </Text>
+            {payment_list.map(i => (
+              <View style={styles.box}>
+                <View
+                  style={{
+                    flexDirection: 'column',
+                  }}>
+                  <Text style={styles.text}>
+                    <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
+                    <Text style={styles.text2}>{i.description}</Text>
+                  </Text>
 
-                <Text style={styles.text}>
-                  <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                  <Text style={styles.text2}>05/05/2019</Text>
-                </Text>
+                  <Text style={styles.text}>
+                    <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
+                    <Text style={styles.text2}>{i.date}</Text>
+                  </Text>
+                </View>
+                <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
+                  <Feather
+                    name={'arrow-down-circle'}
+                    size={25}
+                    color={'#4e73df'}
+                    style={{marginHorizontal: 15}}
+                  />
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-                <Feather
-                  name={'arrow-down-circle'}
-                  size={25}
-                  color={'#476880'}
-                  style={{marginHorizontal: 15}}
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.box}>
-              <View
-                style={{
-                  flexDirection: 'column',
-                }}>
-                <Text style={styles.text}>
-                  <Text style={styles.text1}>DESCRIPTION:</Text>{' '}
-                  <Text style={styles.text2}>Paid</Text>
-                </Text>
-
-                <Text style={styles.text}>
-                  <Text style={styles.text1}>DATE OF PAYMENT:</Text>{' '}
-                  <Text style={styles.text2}>05/05/2019</Text>
-                </Text>
-              </View>
-              <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-                <Feather
-                  name={'arrow-down-circle'}
-                  size={25}
-                  color={'#476880'}
-                  style={{marginHorizontal: 15}}
-                />
-              </TouchableOpacity>
-            </View>
+            ))}
           </View>
         </View>
       </ScrollView>
@@ -162,6 +155,8 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   box: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     flexDirection: 'row',
     alignItems: 'center',
     height: 125,
@@ -206,6 +201,8 @@ const styles = StyleSheet.create({
     margin: 15,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

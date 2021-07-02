@@ -30,8 +30,9 @@ const DrawerNavigator = () => (
     }}
     backBehavior={'order'}
     drawerContentOptions={{
-      activeBackgroundColor: '#f2f2f2',
-      activeTintColor: '#000000',
+      activeBackgroundColor: '#FFFFFF',
+      inactiveTintColor: '#476880',
+      activeTintColor: '#4e73df',
       labelStyle: {fontSize: 18},
       itemStyle: {
         borderTopRightRadius: 30,

@@ -93,8 +93,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     marginBottom: 30,
     borderRadius: 20,
     height: 100,

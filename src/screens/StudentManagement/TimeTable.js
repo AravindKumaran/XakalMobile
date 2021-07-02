@@ -171,7 +171,7 @@ const TimeTable = () => {
                   <Feather
                     name={'chevron-down'}
                     size={25}
-                    color={'#476880'}
+                    color={'#4e73df'}
                     style={{marginHorizontal: 15}}
                   />
                 </TouchableOpacity>
@@ -220,6 +220,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     flexDirection: 'row',
     alignItems: 'center',
     height: 100,
@@ -232,6 +234,8 @@ const styles = StyleSheet.create({
     marginVertical: 15,
   },
   box1: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     flexDirection: 'row',
     alignItems: 'center',
     height: 80,
@@ -316,6 +320,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   touch: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     width: 200,
     backgroundColor: '#FFFFFF',

@@ -58,6 +58,8 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   box: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     height: 50,
     borderRadius: 30,
     marginVertical: 10,
@@ -67,8 +69,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   box1: {
-    borderColor: '#FFFFFF',
-    borderWidth: 1,
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
     marginBottom: 20,
     borderRadius: 20,
     height: 100,
