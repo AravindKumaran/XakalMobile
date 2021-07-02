@@ -13,11 +13,11 @@ import Feather from 'react-native-vector-icons/Feather';
 import {Header} from 'react-native-elements';
 import {useNavigation} from '@react-navigation/native';
 import RBSheet from 'react-native-raw-bottom-sheet';
-import Comments from '../../components/Comments';
+import Comments from '../../../components/Comments';
 
 const user = [
   {
-    image: require('../../assets/images/xakal-logo.png'),
+    image: require('../../../assets/images/xakal-logo.png'),
     name: 'Armin',
     created_at: '12min ago',
     message:
@@ -26,7 +26,7 @@ const user = [
     comments: '5',
   },
   {
-    image: require('../../assets/images/xakal-logo.png'),
+    image: require('../../../assets/images/xakal-logo.png'),
     name: 'Levi',
     created_at: '1day ago',
     message:
@@ -35,7 +35,7 @@ const user = [
     comments: '8',
   },
   {
-    image: require('../../assets/images/xakal-logo.png'),
+    image: require('../../../assets/images/xakal-logo.png'),
     name: 'Mikasu',
     created_at: '1w ago',
     message:
@@ -242,14 +242,14 @@ const Whiteboard = props => {
                         <TouchableOpacity
                           onPress={() => refRBSheet1.current.close()}
                           style={{
-                            top: 0,
+                            top: 5,
                             left: 10,
                             position: 'absolute',
                           }}>
                           <Feather
                             name="chevron-left"
                             size={30}
-                            color="#20232A"
+                            color="#476880"
                           />
                         </TouchableOpacity>
                       </View>

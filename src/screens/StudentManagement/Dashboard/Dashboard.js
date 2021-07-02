@@ -57,6 +57,15 @@ const Dashboard = () => {
       />
       <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <View style={styles.container1}>
+          <View style={styles.box}>
+            <View
+              style={{
+                flexDirection: 'column',
+              }}>
+              <Text style={styles.text3}>LOGIN ID</Text>
+              <Text style={styles.text4}>13IT199</Text>
+            </View>
+          </View>
           <TouchableOpacity
             style={styles.box}
             onPress={() => {
@@ -78,6 +87,31 @@ const Dashboard = () => {
             }}>
             <Text style={styles.text1}>Awards</Text>
           </TouchableOpacity>
+          <View
+            style={{
+              marginVertical: 25,
+              alignSelf: 'center',
+              flexDirection: 'row',
+            }}>
+            <View style={styles.box2}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                }}>
+                <Text style={styles.text3}>FOLLOWERS</Text>
+                <Text style={styles.text4}>18</Text>
+              </View>
+            </View>
+            <View style={styles.box2}>
+              <View
+                style={{
+                  flexDirection: 'column',
+                }}>
+                <Text style={styles.text3}>FOLLOWING</Text>
+                <Text style={styles.text4}>16</Text>
+              </View>
+            </View>
+          </View>
         </View>
       </ScrollView>
     </>
@@ -104,12 +138,39 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     elevation: 10,
   },
+  box2: {
+    borderLeftColor: '#4e73df',
+    borderLeftWidth: 5,
+    borderRadius: 10,
+    marginBottom: 30,
+    height: 100,
+    width: '45%',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    elevation: 10,
+    marginHorizontal: 10,
+  },
   text1: {
     fontFamily: 'Proxima Nova',
     fontWeight: '700',
     fontSize: 18,
     color: '#476880',
     alignSelf: 'center',
+  },
+  text3: {
+    fontFamily: 'Proxima Nova',
+    fontWeight: '700',
+    fontSize: 14,
+    color: '#4e73df',
+    marginHorizontal: 15,
+  },
+  text4: {
+    backgroundColor: 'transparent',
+    color: '#5a5c69',
+    fontWeight: '700',
+    fontSize: 24,
+    marginHorizontal: 15,
   },
 });
 

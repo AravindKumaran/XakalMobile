@@ -242,14 +242,14 @@ const Whiteboard = props => {
                         <TouchableOpacity
                           onPress={() => refRBSheet1.current.close()}
                           style={{
-                            top: 0,
+                            top: 5,
                             left: 10,
                             position: 'absolute',
                           }}>
                           <Feather
                             name="chevron-left"
                             size={30}
-                            color="#20232A"
+                            color="##476880"
                           />
                         </TouchableOpacity>
                       </View>

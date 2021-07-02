@@ -39,6 +39,7 @@ const Comments = ({postId, postUserId, curUser, route, setCommentss}) => {
           marginVertical: 10,
           fontWeight: '700',
           marginTop: -35,
+          color: '#476880'
         }}>
         Comments
       </Text>
