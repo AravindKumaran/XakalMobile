@@ -13,6 +13,7 @@ import AccountsNavigator from './AccountsNavigator';
 import AttendanceNavigator from './AttendanceNavigator';
 import AssessmentsNavigator from './AssessmentsNavigator';
 import Profile from '../../screens/AdminManagement/Profile/Profile';
+import MaintenanceNavigator from './MaintenanceNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -151,6 +152,17 @@ const DrawerNavigator = () => (
       options={{
         drawerIcon: ({color, size}) => (
           <Feather name="shield" size={size} color={color} />
+        ),
+        headerShown: false,
+        unmountOnBlur: true,
+      }}
+    />
+    <Drawer.Screen
+      name="Maintenance"
+      component={MaintenanceNavigator}
+      options={{
+        drawerIcon: ({color, size}) => (
+          <Feather name="crosshair" size={size} color={color} />
         ),
         headerShown: false,
         unmountOnBlur: true,

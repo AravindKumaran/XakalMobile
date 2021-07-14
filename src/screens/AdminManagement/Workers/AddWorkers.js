@@ -24,15 +24,13 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const course_list = [
-  {label: 'Physics', value: 'Physics'},
-  {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'EVS', value: 'EVS'},
-  {label: 'Mathematics', value: 'Mathematics'},
-  {label: 'OOPS', value: 'OOPS'},
+const type_list = [
+  {label: 'Benches', value: 'Benches'},
+  {label: 'Chairs', value: 'Chairs'},
+  {label: 'Cleaning', value: 'Cleaning'},
 ];
 
-const department = [
+const department_list = [
   {label: 'CSE', value: 'CSE'},
   {label: 'IT', value: 'IT'},
   {label: 'ECE', value: 'ECE'},
@@ -43,7 +41,8 @@ const AddWorkers = () => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const [isSelected, setisSelected] = useState(false);
+  const [type, setType] = useState('Cleaning');
+  const [incharge, setIncharge] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -139,6 +138,73 @@ const AddWorkers = () => {
             )}
           </View>
         </View>
+        <View>
+          <TouchableOpacity
+            style={[styles.touch, {width: '50%'}]}
+            onPress={() => setIncharge(!incharge)}>
+            <Text
+              style={{
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Add Inchange for
+            </Text>
+          </TouchableOpacity>
+        </View>
+        {incharge && (
+          <View>
+            <View style={{flexDirection: 'row'}}>
+              <View style={{flex: 1}}>
+                <RNPickerSelect
+                  useNativeAndroidPickerStyle={false}
+                  onValueChange={value => setType(value)}
+                  items={type_list}
+                  placeholder={{label: 'Select Type', value: null}}
+                  style={customPickerStyles}
+                  // Icon={() => (
+                  //   <Feather
+                  //     name="chevron-down"
+                  //     size={25}
+                  //     color="#476880"
+                  //     style={{top: 12.5, right: 20}}
+                  //   />
+                  // )}
+                />
+              </View>
+            </View>
+            {type === 'Cleaning' ? (
+              <></>
+            ) : (
+              <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+                <View
+                  style={[
+                    styles.inputView,
+                    {width: '35%', marginHorizontal: 10},
+                  ]}>
+                  <TextInput
+                    style={styles.inputText}
+                    placeholder="From"
+                    placeholderTextColor="#476880"
+                    keyboardType="numeric"
+                  />
+                </View>
+                <View
+                  style={[
+                    styles.inputView,
+                    {width: '35%', marginHorizontal: 10},
+                  ]}>
+                  <TextInput
+                    style={styles.inputText}
+                    placeholder="To"
+                    placeholderTextColor="#476880"
+                    keyboardType="numeric"
+                  />
+                </View>
+              </View>
+            )}
+          </View>
+        )}
         <View style={{flexDirection: 'row', alignSelf: 'center'}}>
           <TouchableOpacity style={styles.touch}>
             <Text

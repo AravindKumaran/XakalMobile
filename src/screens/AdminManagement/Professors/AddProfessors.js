@@ -23,12 +23,16 @@ const semester_list = [
   {label: 'Semester 8', value: 'Semester 8'},
 ];
 
-const course_list = [
-  {label: 'Physics', value: 'Physics'},
-  {label: 'Chemistry', value: 'Chemistry'},
-  {label: 'EVS', value: 'EVS'},
-  {label: 'Mathematics', value: 'Mathematics'},
-  {label: 'OOPS', value: 'OOPS'},
+const lab_list = [
+  {label: 'Lab 1', value: 'Lab 1'},
+  {label: 'Lab 2', value: 'Lab 2'},
+  {label: 'Lab 3', value: 'Lab 3'},
+];
+
+const auditorium_list = [
+  {label: 'Auditorium 1', value: 'Auditorium 1'},
+  {label: 'Auditorium 2', value: 'Auditorium 2'},
+  {label: 'Auditorium 3', value: 'Auditorium 3'},
 ];
 
 const department = [
@@ -38,11 +42,18 @@ const department = [
   {label: 'EEE', value: 'EEE'},
 ];
 
+const type_list = [
+  {label: 'Lab', value: 'Lab'},
+  {label: 'Auditorium', value: 'Auditorium'},
+  {label: 'Training Cell', value: 'Training Cell'},
+];
+
 const AddProfessors = () => {
   const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-  const [isSelected, setisSelected] = useState(false);
+  const [type, setType] = useState('Training Cell');
+  const [incharge, setIncharge] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
@@ -158,6 +169,83 @@ const AddProfessors = () => {
             )}
           </View>
         </View>
+        <View>
+          <TouchableOpacity
+            style={[styles.touch, {width: '50%'}]}
+            onPress={() => setIncharge(!incharge)}>
+            <Text
+              style={{
+                color: '#476880',
+                alignSelf: 'center',
+                fontWeight: '700',
+              }}>
+              Add Inchange for
+            </Text>
+          </TouchableOpacity>
+        </View>
+        {incharge && (
+          <View>
+            <View style={{flex: 1}}>
+              <RNPickerSelect
+                useNativeAndroidPickerStyle={false}
+                onValueChange={value => setType(value)}
+                items={type_list}
+                placeholder={{label: 'Select Type', value: null}}
+                style={customPickerStyles}
+                // Icon={() => (
+                //   <Feather
+                //     name="chevron-down"
+                //     size={25}
+                //     color="#476880"
+                //     style={{top: 12.5, right: 20}}
+                //   />
+                // )}
+              />
+            </View>
+            {type === 'Lab' && (
+              <View style={{flexDirection: 'row'}}>
+                <View style={{flex: 1}}>
+                  <RNPickerSelect
+                    useNativeAndroidPickerStyle={false}
+                    onValueChange={value => console.log(value)}
+                    items={lab_list}
+                    placeholder={{label: 'Select Lab', value: null}}
+                    style={customPickerStyles}
+                    // Icon={() => (
+                    //   <Feather
+                    //     name="chevron-down"
+                    //     size={25}
+                    //     color="#476880"
+                    //     style={{top: 12.5, right: 20}}
+                    //   />
+                    // )}
+                  />
+                </View>
+              </View>
+            )}
+            {type === 'Auditorium' && (
+              <View style={{flexDirection: 'row'}}>
+                <View style={{flex: 1}}>
+                  <RNPickerSelect
+                    useNativeAndroidPickerStyle={false}
+                    onValueChange={value => console.log(value)}
+                    items={auditorium_list}
+                    placeholder={{label: 'Select Auditorium', value: null}}
+                    style={customPickerStyles}
+                    // Icon={() => (
+                    //   <Feather
+                    //     name="chevron-down"
+                    //     size={25}
+                    //     color="#476880"
+                    //     style={{top: 12.5, right: 20}}
+                    //   />
+                    // )}
+                  />
+                </View>
+              </View>
+            )}
+          </View>
+        )}
         <View style={{flexDirection: 'row', alignSelf: 'center'}}>
           <TouchableOpacity style={styles.touch1}>
             <Text
